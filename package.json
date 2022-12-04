@@ -1,0 +1,15 @@
+{
+  "name": "timeago-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SerhiiCho/timeago-docs",
+  "author": "SerhiiCho <serhiicho@protonmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.53"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
