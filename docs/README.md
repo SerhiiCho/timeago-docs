@@ -1,6 +1,7 @@
 ---
 home: true
 heroImage: /images/logo.png
+tagline: Fast and lightweight date time package for Go
 actions:
 - text: Get started →
   link: /documentation
