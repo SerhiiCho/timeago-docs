@@ -1,6 +1,7 @@
 import { defineUserConfig, defaultTheme } from 'vuepress'
 
 export default defineUserConfig({
+    base: '/timeago-docs/',
     lang: 'en-US',
     title: 'Timeago',
     description: 'Fast and lightweight date time package that converts given date into "n time ago" format.',
