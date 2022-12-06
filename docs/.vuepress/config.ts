@@ -1,4 +1,5 @@
 import { defineUserConfig, defaultTheme } from 'vuepress'
+import { searchPlugin } from '@vuepress/plugin-search'
 
 export default defineUserConfig({
     base: '/timeago-docs/',
@@ -7,6 +8,15 @@ export default defineUserConfig({
     description: 'Fast and lightweight date time package that converts given date into "n time ago" format.',
     head: [
         ['link', { rel: 'icon', href: '/images/favicon.png' }]
+    ],
+    plugins: [
+        searchPlugin({
+            locales: {
+                '/': {
+                    placeholder: 'Search',
+                },
+            },
+        })
     ],
     theme: defaultTheme({
         logo: '/images/logo.png',
