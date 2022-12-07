@@ -34,11 +34,11 @@ export default defineUserConfig({
                 link: 'https://github.com/SerhiiCho/timeago',
             },
             {
-                text: 'Changelog',
+                text: '📃 Changelog',
                 link: 'https://github.com/SerhiiCho/timeago/blob/master/docs/CHANGELOG.md',
             },
             {
-                text: 'About author',
+                text: '👨🏻‍💻 About author',
                 link: 'https://serhii.io/about-me?welcome=dg5k1',
             },
         ],
