@@ -2,7 +2,7 @@ import { defineUserConfig, defaultTheme } from 'vuepress'
 import { searchPlugin } from '@vuepress/plugin-search'
 
 export default defineUserConfig({
-    base: '/timeago-docs/',
+    base: '/timeago/',
     lang: 'en-US',
     title: 'Timeago',
     description: 'Fast and lightweight date time package that converts given date into "n time ago" format.',
