@@ -39,7 +39,7 @@ export default defineUserConfig({
             },
             {
                 text: 'About author',
-                link: 'https://serhii.io/about-me',
+                link: 'https://serhii.io/about-me?welcome=dg5k1',
             },
         ],
     }),
