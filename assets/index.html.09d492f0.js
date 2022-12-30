@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a,a as n}from"./app.4a68797e.js";const o={},s=n("p",null,'Fast and lightweight date time package that converts given date into "n time ago" format. The package has many cool features and several supported languages.',-1),c=[s];function r(_,i){return t(),a("div",null,c)}const d=e(o,[["render",r],["__file","index.html.vue"]]);export{d as default};
