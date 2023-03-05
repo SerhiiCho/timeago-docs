@@ -38,9 +38,13 @@ export default defineUserConfig({
                 link: 'https://github.com/SerhiiCho/timeago/blob/master/docs/CHANGELOG.md',
             },
             {
-                text: '👨🏻‍💻 About author',
+                text: '👨🏻‍💻 Author',
                 link: 'https://serhii.io/about-me',
                 rel: 'author',
+            },
+            {
+                text: '☕️ By me a coffee',
+                link: 'https://www.buymeacoffee.com/serhiicho',
             },
         ],
     }),
