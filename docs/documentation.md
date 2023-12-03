@@ -194,9 +194,11 @@ fmt.Println(res) // 2 hours
 
 ## 🇸🇿 Contribute translation
 
-You can contribute a language support in 4 simple steps. All you need to do is to copy/paste 2 files and change them to match the language that you want to add.
+You can contribute a language support in 3 simple steps. All you need to do is to copy/paste 2 files and change them to match the language that you want to add.
 
-Finally, add 1 line to `README.md` file and 1 rule to a `rules.go`. Here is my [commit](https://github.com/SerhiiCho/timeago/commit/c1ee0429b540f1cce5eb61b6a3441022d9cb43e7) for supporting Dutch language that shows changes that I did to add the support. It's pretty straightforward. Waiting for you PR 😉.
+Here is my [commit](https://github.com/SerhiiCho/timeago/commit/c1ee0429b540f1cce5eb61b6a3441022d9cb43e7) for supporting Dutch language that shows changes that I did to add the support. It's pretty straightforward. Waiting for you PR 😉.
+
+> You can skip the step with `README.md` file, since all the documentation is here instead of a `README.md` file like it was before.
 
 ### Step 1. Add translation file
 
@@ -279,14 +281,6 @@ We'll use singular form when number is equal to 1, and plural if number is more 
 ### Step 3. Add tests
 
 Tests for languages live in `tests` directory. Each language has it's own file. The easies way to add tests for your language is to copy paste one of the tests and change it to match your language.
-
-### Step 4. Add info to README
-
-Add a line to `README.md` file. `README.md` file has section ["Supported languages"](https://github.com/SerhiiCho/timeago#-supported-languages) where you need to add your language. For example for Dutch language I've added this line:
-
-```
-| 🇳🇱 | Dutch | nl |
-```
 
 ## 🚀 Quick Start
 
