@@ -43,7 +43,7 @@ export default defineUserConfig({
                 rel: 'author',
             },
             {
-                text: '☕️ By me a coffee',
+                text: '☕️ Buy me a coffee',
                 link: 'https://www.buymeacoffee.com/serhiicho',
             },
         ],
