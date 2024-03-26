@@ -285,5 +285,5 @@ Tests for languages live in `tests` directory. Each language has it's own file. 
 ## 🚀 Quick Start
 
 ```bash
-go get -u github.com/SerhiiCho/timeago
+go get -u github.com/SerhiiCho/timeago/v2
 ```
