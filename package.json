@@ -6,10 +6,10 @@
   "author": "SerhiiCho <serhiicho@protonmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-rc.8",
-    "@vuepress/plugin-search": "^2.0.0-rc.8",
+    "@vuepress/bundler-vite": "^2.0.0-rc.9",
+    "@vuepress/plugin-search": "^2.0.0-rc.9",
     "@vuepress/theme-default": "^2.0.0-rc.17",
-    "vuepress": "^2.0.0-rc.8"
+    "vuepress": "^2.0.0-rc.9"
   },
   "scripts": {
     "dev": "vuepress dev docs",
