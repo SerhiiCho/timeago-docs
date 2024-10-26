@@ -6,13 +6,16 @@
   "author": "SerhiiCho <serhiicho@protonmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-rc.9",
-    "@vuepress/plugin-search": "^2.0.0-rc.9",
-    "@vuepress/theme-default": "^2.0.0-rc.17",
-    "vuepress": "^2.0.0-rc.9"
+    "@vuepress/bundler-vite": "^2.0.0-rc.18",
+    "@vuepress/plugin-search": "^2.0.0-rc.18",
+    "@vuepress/theme-default": "^2.0.0-rc.18",
+    "vuepress": "^2.0.0-rc.18"
   },
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.80.4"
   }
 }

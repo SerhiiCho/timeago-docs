@@ -7,10 +7,9 @@ export default defineUserConfig({
     base: '/timeago-docs/',
     lang: 'en-US',
     title: 'Timeago',
-    description: 'Fast and lightweight date time package that converts given date into "n time ago" format.',
-    head: [
-        ['link', { rel: 'icon', href: '/images/favicon.png' }],
-    ],
+    description:
+        'Fast and lightweight date time package that converts given date into "n time ago" format.',
+    head: [['link', { rel: 'icon', href: '/images/favicon.png' }]],
     bundler: viteBundler(),
     plugins: [
         searchPlugin({
@@ -19,7 +18,7 @@ export default defineUserConfig({
                     placeholder: 'Search',
                 },
             },
-        })
+        }),
     ],
     theme: defaultTheme({
         logo: '/images/logo.png',
