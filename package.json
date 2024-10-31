@@ -1,8 +1,8 @@
 {
-  "name": "timeago-docs",
+  "name": "time-ago",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/SerhiiCho/timeago-docs",
+  "repository": "https://time-ago.github.io",
   "author": "SerhiiCho <serhiicho@protonmail.com>",
   "license": "MIT",
   "dependencies": {
