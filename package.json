@@ -1,21 +1,29 @@
 {
-  "name": "time-ago",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://time-ago.github.io",
-  "author": "SerhiiCho <serhiicho@protonmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-rc.18",
-    "@vuepress/plugin-search": "^2.0.0-rc.18",
-    "@vuepress/theme-default": "^2.0.0-rc.18",
-    "vuepress": "^2.0.0-rc.18"
-  },
-  "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
-  },
-  "devDependencies": {
-    "sass-embedded": "^1.80.4"
-  }
+    "name": "time-ago",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://time-ago.github.io",
+    "author": "SerhiiCho <serhiicho@protonmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@vuepress/bundler-vite": "^2.0.0-rc.18",
+        "@vuepress/plugin-search": "^2.0.0-rc.18",
+        "@vuepress/theme-default": "^2.0.0-rc.18",
+        "vuepress": "^2.0.0-rc.18"
+    },
+    "contributors": [
+        {
+            "name": "SerhiiCho",
+            "email": "serhiicho@protonmail.com"
+        }
+    ],
+    "scripts": {
+        "dev": "vuepress dev docs",
+        "build": "vuepress build docs",
+        "deploy": "yarn build && gh-pages -d docs/.vuepress/dist"
+    },
+    "devDependencies": {
+        "sass-embedded": "^1.80.4",
+        "gh-pages": "^6.2.0"
+    }
 }
