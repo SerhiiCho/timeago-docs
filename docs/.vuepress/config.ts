@@ -4,7 +4,7 @@ import { searchPlugin } from '@vuepress/plugin-search'
 import { defaultTheme } from '@vuepress/theme-default'
 
 export default defineUserConfig({
-    base: '/timeago-docs/',
+    base: '/',
     lang: 'en-US',
     title: 'Timeago',
     description:
