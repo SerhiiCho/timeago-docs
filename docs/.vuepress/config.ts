@@ -37,7 +37,7 @@ export default defineUserConfig({
             },
             {
                 text: '📃 Changelog',
-                link: 'https://github.com/SerhiiCho/timeago/blob/master/docs/CHANGELOG.md',
+                link: 'https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md',
             },
         ],
     }),
