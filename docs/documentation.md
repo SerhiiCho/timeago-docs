@@ -118,6 +118,7 @@ This package supports multiple languages. You can easily contribute your own lan
 | 🇷🇺 | Russian | ru |
 | 🇺🇦 | Ukrainian | uk |
 | 🇳🇱 | Dutch | nl |
+| 🇩🇪 | German | de |
 
 ## 🤲 Options
 
