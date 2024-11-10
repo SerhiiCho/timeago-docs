@@ -15,7 +15,7 @@
         "dev": "vitepress dev docs",
         "build": "vitepress build docs",
         "preview": "yarn build && vitepress preview docs",
-        "deploy": "gh-pages -d docs/.vitepress/dist"
+        "deploy": "yarn build && gh-pages -d docs/.vitepress/dist"
     },
     "devDependencies": {
         "gh-pages": "^6.2.0",
