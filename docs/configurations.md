@@ -20,23 +20,18 @@ func main() {
 }
 ```
 
-### Supported languages
-This package supports multiple languages. You can easily [contribute](/contribute) your own language. Take a look at already supported languages:
-
-| Flag | Language | Code (ISO 639-1) |
-| --- | --- | --- |
-| 🇬🇧 | English | en |
-| 🇷🇺 | Russian | ru |
-| 🇺🇦 | Ukrainian | uk |
-| 🇳🇱 | Dutch | nl |
-| 🇩🇪 | German | de |
+:::tip Supported languages
+You can find the full list of supported languages in the [What is Timeago?](/what-is-timeago.html#supported-languages) section.
+:::
 
 ## Location
 Optionally you can set the location in your application. The functionality is going to be the
 same, but with 1 exception. In the absence of time zone information, package interprets a time as UTC;
 With location configuration it interprets the time as in the given location.
 
-> There is no default value for this option.
+:::warning
+There is no default value for this option.
+:::
 
 ```go
 import "github.com/SerhiiCho/timeago/v2"
@@ -48,7 +43,9 @@ func main() {
 }
 ```
 
-> Please make sure that timezone configuration is correct for your location. It is very important for displaying the correct datetime.
+:::tip Set Location
+Please make sure that timezone configuration is correct for your location. It is very important for displaying the correct datetime.
+:::
 
 ## Overwrite translations
 There are cases when you want to replace certain words with specific ones. For example you might want to replace "days" with "d" to get "4 d ago". You can do it with by setting specific configurations for each language. Let's see the example where we want to overwrite words for English language:
@@ -98,4 +95,6 @@ func main() {
 
 With this configurations, you'll get `5 д` instead of `5 дней назад`.
 
-> You can find the full list of words that you can overwrite in `langs/` directory in the root of the project.
+:::tip Supported words
+You can find the full list of words that you can overwrite in `langs/` directory in the root of the project, or you can find them in our [GitHub repository](https://github.com/SerhiiCho/timeago/tree/main/langs).
+:::

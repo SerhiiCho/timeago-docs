@@ -40,6 +40,8 @@ fmt.Println(res) // 1 hour ago
 ```
 
 ### Usage with the date in the future
+Future dates are also supported. The package will return the correct string without `ago` word in it.
+
 ```go
 pastDate := time.Now().Add(time.Hour * 2)
 

@@ -3,20 +3,31 @@ outline: deep
 ---
 
 # What is Timeago?
-Timeago is a fast and lightweight date and time package that converts given date into "n time ago" format.
-
-The package has many cool features and several supported languages.
+Timeago is a fast, lightweight date and time library that converts a given date into a “time ago” format. It calculates and displays the time difference between the specified date and the current date, supporting both past and future dates for versatile use.
 
 ## Features
-- 🕐 Parses any given date, no matter it is the future date or the past;
-- 🕑 Has several options that you can use depending on your use case;
-- 🕒 Well tested;
-- 🕓 Supports several languages;
-- 🕔 Easy to contribute a new language support;
-- 🕧 Small codebase;
-- 🕖 Frequent small releases without breaking changes;
-- 🕗 Can parse Unix timestamp;
-- 🕘 Can parse date time string in `YYYY-MM-DD HH:MM:SS` format;
-- 🕙 Can parse time from `time.Time` GO package;
-- 🕚 All the changes and features are written in the [CHANGELOG.md](https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md);
-- 🕛 Well documented package;
+The package has several nice features, such as:
+
+- 📅 Flexible date parsing, supporting both [past and future dates](get-started.html#usage-with-the-date-in-the-future)
+- ⚙️ Configurable [options](/options) to suit various use cases
+- ✅ Comprehensive test coverage for reliability
+- 🌐 Support for multiple languages
+- ✍️ Easy [contribution](/contribute) of new language support
+- 📦 Compact codebase for minimal footprint
+- 🚀 Regular, non-breaking updates
+- 🕰️ Unix timestamp parsing
+- ⏱️ Support for date-time strings in the `YYYY-MM-DD HH:MM:SS` format
+- 📆 Compatibility with time.Time from the Go standard library
+- 📝 Detailed [CHANGELOG.md](https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md) for all updates and features
+- 📖 Thorough documentation for ease of use
+
+## Supported languages
+Timeago supports multiple languages, and you’re welcome to [contribute](/contribute) additional ones. Check out the languages currently available:
+
+| Flag | Language | Code (ISO 639-1) |
+| --- | --- | --- |
+| 🇬🇧 | English | en |
+| 🇷🇺 | Russian | ru |
+| 🇺🇦 | Ukrainian | uk |
+| 🇳🇱 | Dutch | nl |
+| 🇩🇪 | German | de |

@@ -27,6 +27,3 @@ features:
     details: Timeago can parse several different date time formats, including UNIX timestamp, date string and time package.
     icon: 🧩
 ---
-
-Fast and lightweight date time package that converts given date into "n time ago" format. The package has many cool features and several supported languages.
-
