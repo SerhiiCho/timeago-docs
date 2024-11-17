@@ -9,7 +9,7 @@ To read about the package, you can on [What is Timeago?](/what-is-timeago) page.
 Package versioning is following the Go Modules versioning. To get the latest version of the package run the following command:
 
 ```bash
-go get -u github.com/SerhiiCho/timeago/v2
+go get -u github.com/SerhiiCho/timeago/v3
 ```
 
 ## Usage

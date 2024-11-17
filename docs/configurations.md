@@ -25,27 +25,21 @@ You can find the full list of supported languages in the [What is Timeago?](/wha
 :::
 
 ## Location
-Optionally you can set the location in your application. The functionality is going to be the
-same, but with 1 exception. In the absence of time zone information, package interprets a time as UTC;
-With location configuration it interprets the time as in the given location.
-
-:::warning
-There is no default value for this option.
-:::
+Location is the timezone location neeed for parsing string date like `2019-01-01 00:00:00`
+to `time.Time`. If Location is not set it will default to the server's location when parsing
+strings. If you date string is in the server's timezone **you don't need to set this**.
 
 ```go
 import "github.com/SerhiiCho/timeago/v2"
 
 func main() {
     timeago.SetConfig(timeago.Config{
-        Location: "Europe/Kiev",
+        Location: "America/New_York",
     })
 }
 ```
 
-:::tip Set Location
-Please make sure that timezone configuration is correct for your location. It is very important for displaying the correct datetime.
-:::
+Example locations: `America/New_York`, `Asia/Tokyo`, `Australia/Sydney`.
 
 ## Overwrite translations
 There are cases when you want to replace certain words with specific ones. For example you might want to replace "days" with "d" to get "4 d ago". You can do it with by setting specific configurations for each language. Let's see the example where we want to overwrite words for English language:
