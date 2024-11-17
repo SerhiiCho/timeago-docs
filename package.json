@@ -4,7 +4,9 @@
     "repository": "https://github.com/time-ago/time-ago.github.io",
     "author": "SerhiiCho <serhiicho@protonmail.com>",
     "license": "MIT",
-    "dependencies": {},
+    "dependencies": {
+        "vitepress-versioning-plugin": "^1.2.1"
+    },
     "contributors": [
         {
             "name": "SerhiiCho",
