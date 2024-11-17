@@ -7,7 +7,9 @@ You can contribute a language support in 3 simple steps. All you need to do is t
 
 Here is my [commit](https://github.com/SerhiiCho/timeago/commit/c1ee0429b540f1cce5eb61b6a3441022d9cb43e7) for supporting Dutch language that shows changes that I did to add the support. It's pretty straightforward. Waiting for you PR 😉.
 
-> You can skip the step with `README.md` file, since all the documentation is here instead of a `README.md` file like it was before.
+:::tip
+You can skip the step with `README.md` file, since all the documentation is here instead of a `README.md` file like it was before.
+:::
 
 ## Step 1. Add translation file
 Translation files live in `langs` directory. Each translation file is pretty simple JSON object. Here's the example of `en.json`.

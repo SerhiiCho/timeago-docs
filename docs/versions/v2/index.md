@@ -27,3 +27,7 @@ features:
     details: Timeago can parse several different date time formats, including UNIX timestamp, date string and time package.
     icon: 🧩
 ---
+
+:::warning
+This is the `v2` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+:::

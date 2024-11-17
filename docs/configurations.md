@@ -11,10 +11,10 @@ Optionally you can set the language in your application.
 > Default value is `"en"`
 
 ```go
-import "github.com/SerhiiCho/timeago/v2"
+import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    timeago.SetConfig(timeago.Config{
+    timeago.Configure(&timeago.Config{
         Language: "ru",
     })
 }
@@ -30,10 +30,10 @@ to `time.Time`. If Location is not set it will default to the server's location 
 strings. If you date string is in the server's timezone **you don't need to set this**.
 
 ```go
-import "github.com/SerhiiCho/timeago/v2"
+import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    timeago.SetConfig(timeago.Config{
+    timeago.Configure(&timeago.Config{
         Location: "America/New_York",
     })
 }
@@ -45,10 +45,10 @@ Example locations: `America/New_York`, `Asia/Tokyo`, `Australia/Sydney`.
 There are cases when you want to replace certain words with specific ones. For example you might want to replace "days" with "d" to get "4 d ago". You can do it with by setting specific configurations for each language. Let's see the example where we want to overwrite words for English language:
 
 ```go
-import "github.com/SerhiiCho/timeago/v2"
+import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    timeago.SetConfig(timeago.Config{
+    timeago.Configure(&timeago.Config{
 		Translations: []timeago.Translation{
 			{
 				Language: "en",
@@ -68,10 +68,10 @@ func main() {
 After this configuration, instead of getting, for example, `4 days ago` you'll get `4 d` and instead of `1 week ago` you'll get `1 w`. For other languages it's pretty much the same thing:
 
 ```go
-import "github.com/SerhiiCho/timeago/v2"
+import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    timeago.SetConfig(timeago.Config{
+    timeago.Configure(&timeago.Config{
 		Translations: []timeago.Translation{
 			{
 				Language: "ru",

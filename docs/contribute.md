@@ -3,87 +3,134 @@ outline: deep
 ---
 
 # Contribute translation
-You can contribute a language support in 3 simple steps. All you need to do is to copy/paste 2 files and change them to match the language that you want to add.
+You can contribute a language support in 3 simple steps. All you need to do is to copy/paste several files and change them to match the language that you want to add.
 
-Here is my [commit](https://github.com/SerhiiCho/timeago/commit/c1ee0429b540f1cce5eb61b6a3441022d9cb43e7) for supporting Dutch language that shows changes that I did to add the support. It's pretty straightforward. Waiting for you PR 😉.
+## Step 1. Add language set file
+Language set files live in [langs](https://github.com/SerhiiCho/timeago/tree/main/langs) directory. Each translation file is a JSON object with the name matching the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard of the language that you want to add.
 
-> You can skip the step with `README.md` file, since all the documentation is here instead of a `README.md` file like it was before.
+These files follow the [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules for each language. Keep in mind that the only required field that we need to define for time unit is `other`, since this field is used as a fallback if no other rule matches.
 
-## Step 1. Add translation file
-Translation files live in `langs` directory. Each translation file is pretty simple JSON object. Here's the example of `en.json`.
-
-```json
-{
-    "Ago": "ago",
-    "Online": "Online",
-    "JustNow": "Just now",
-    "Second": "second",
-    "Seconds": "seconds",
-    "Minute": "minute",
-    "Minutes": "minutes",
-    "Hour": "hour",
-    "Hours": "hours",
-    "Day": "day",
-    "Days": "days",
-    "Week": "week",
-    "Weeks": "weeks",
-    "Month": "month",
-    "Months": "months",
-    "Year": "year",
-    "Years": "years"
-}
-```
-
-Some languages (like Russian) have multiple plural forms of the word. For example English has only `second` and `seconds`, but Russian language has 3 types `секунда`, `секунд` and `секунды`. For these cases we can add additional translation for seconds, minutes, hours, days, weeks, months and years. Here is the example of `ru.json`.
+Here's the example of `ru.json`
 
 ```json
 {
-    "Ago": "назад",
-    "Online": "В сети",
-    "JustNow": "Только что",
-    "Second": "секунда",
-    "Seconds": "секунды",
-    "SecondsSpecial": "секунд",
-    "Minute": "минута",
-    "Minutes": "минуты",
-    "MinutesSpecial": "минут",
-    "Hour": "час",
-    "Hours": "часа",
-    "HoursSpecial": "часов",
-    "Day": "день",
-    "Days": "дня",
-    "DaysSpecial": "дней",
-    "Week": "неделя",
-    "Weeks": "недели",
-    "WeeksSpecial": "недель",
-    "Month": "месяц",
-    "Months": "месяца",
-    "MonthsSpecial": "месяцев",
-    "Year": "год",
-    "Years": "года",
-    "YearsSpecial": "лет"
+    "format": "{num} {timeUnit} {ago}",
+    "ago": "назад",
+    "online": "В сети",
+    "justnow": "Только что",
+
+    "second": {
+        "zero": "секунд",
+        "one": "секунда",
+        "few": "секунды",
+        "many": "секунд",
+        "other": "секунды"
+    },
+    "minute": {
+        "zero": "минут",
+        "one": "минута",
+        "few": "минуты",
+        "many": "минут",
+        "other": "минуты"
+    },
+    "hour": {
+        "zero": "часов",
+        "one": "час",
+        "few": "часа",
+        "many": "часов",
+        "other": "часа"
+    },
+    "day": {
+        "zero": "дней",
+        "one": "день",
+        "few": "дня",
+        "many": "дней",
+        "other": "дня"
+    },
+    "week": {
+        "zero": "недель",
+        "one": "неделя",
+        "few": "недели",
+        "many": "недель",
+        "other": "недели"
+    },
+    "month": {
+        "zero": "месяцев",
+        "one": "месяц",
+        "few": "месяца",
+        "many": "месяцев",
+        "other": "месяца"
+    },
+    "year": {
+        "zero": "лет",
+        "one": "год",
+        "few": "года",
+        "many": "лет",
+        "other": "года"
+    }
 }
 ```
 
-You can see that it has `SecondsSpecial`, `MinutesSpecial`, `HoursSpecial`, `DaysSpecial`, `WeeksSpecial` and `YearsSpecial` keys. Those are responsible for special age cases.
+In this file we don't actually need to define the `few` field, since the the fallback is also matches the `few`, but I just wanted to demonstrate the full version of the file so that you have an idea how many fields are there.
 
 ## Step 2. Add language rules
-All rules for each language is defined in `getRules` function in `rules.go` file. Rule is just a set of conditions that define when to apply singular form and when to apply plural form.
+All rules for each language is defined in `grammarRules` variable in [rules.go](https://github.com/SerhiiCho/timeago/blob/main/rules.go) file. Rule is just a set of conditions that define when to apply particular form from the language set.
 
-Here is the example for English rules:
+Here is the example for Russian rules:
 
 ```go
-func getRules(number, lastDigit int) map[string]Rule {
-	return map[string]Rule{
-		"en": {
-			Single: number == 1,
-			Plural: number > 1 || number == 0,
+var grammarRules = func(num int) map[string]*Rule {
+	end := num % 10
+
+	return map[string]*Rule{
+		"ru": {
+			Zero: num == 0,
+			One:  num == 1 || (num > 20 && end == 1),
+			Two:  num == 2,
+			Few:  end == 2 || end == 3 || end == 4,
+			Many: (num >= 5 && num <= 20) || end == 0 || (end >= 5 && end <= 9),
 		},
 	}
 }
 ```
 
-We'll use singular form when number is equal to 1, and plural if number is more than 1 or number is 0. You can easily write your own rules for your language.
+In these rules we tell that Timeago should use the `one` form when number is `1` or when number is more than `20` and the last digit is `1`. In English we don't have such complicated rules for plural forms. Here how English rules look like:
+
+```go
+var grammarRules = func(num int) map[string]*Rule {
+	end := num % 10
+
+	return map[string]*Rule{
+		"en": {
+			Zero: num == 0,
+			One:  num == 1,
+			Two:  num == 2,
+			Few:  num > 1,
+			Many: num > 1,
+		},
+	}
+}
+```
+
+As a convenience, if the language that you want to add matches the rules of already existing language, you can just add your language `ISO 639` code to the rule key like this:
+
+```go
+var grammarRules = func(num int) map[string]*Rule {
+	end := num % 10
+
+	return map[string]*Rule{
+		"en,nl,de": {
+			Zero: num == 0,
+			One:  num == 1,
+			Two:  num == 2,
+			Few:  num > 1,
+			Many: num > 1,
+		},
+	}
+}
+```
+
+English, Dutch and German languages have the same rules for plural forms, so we can just add them to the same rule key.
 
 ## Step 3. Add tests
 Tests for languages live in `tests` directory. Each language has it's own file. The easies way to add tests for your language is to copy paste one of the tests and change it to match your language.
