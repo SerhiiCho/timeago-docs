@@ -15,12 +15,22 @@ export default defineVersionedConfig(
         themeConfig: {
             versionSwitcher: false,
             logo: '/images/logo.png',
+            footer: {
+                message:
+                    'Released under the <a href="https://github.com/SerhiiCho/timeago/blob/main/LICENSE.md" target="_blank">MIT License</a>',
+                copyright:
+                    'Copyright © 2018 - present <a href="https://serhii.io/about-me" target="_blank">Serhii Cho</a>',
+            },
 
             nav: [
                 {
                     component: 'VersionSwitcher',
                 },
                 { text: 'Get Started', link: '/get-started' },
+                {
+                    text: 'Changelog',
+                    link: 'https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md',
+                },
             ],
             sidebar: {
                 '/v2/': [
