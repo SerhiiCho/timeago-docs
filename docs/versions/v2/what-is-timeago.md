@@ -14,7 +14,7 @@ Timeago is a fast, lightweight date and time library that converts a given date 
 ## Features
 The package has several nice features, such as:
 
-- 📅 Flexible date parsing, supporting both [past and future dates](/v2#usage-with-the-date-in-the-future)
+- 📅 Flexible date parsing, supporting both [past and future dates](/v2/#usage-with-the-date-in-the-future)
 - ⚙️ Configurable [options](/options) to suit various use cases
 - ✅ Comprehensive test coverage for reliability
 - 🌐 Support for multiple languages
