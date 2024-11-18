@@ -4,6 +4,10 @@ search: false
 title: Configurations - v2
 ---
 
+:::warning
+This is the `v2` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+:::
+
 # Configurations
 We can set package configurations with `SetConfig` function that accepts `Config` structure.
 

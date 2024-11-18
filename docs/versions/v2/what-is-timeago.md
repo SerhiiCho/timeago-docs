@@ -4,13 +4,17 @@ search: false
 title: What is Timeago? - v2
 ---
 
+:::warning
+This is the `v2` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+:::
+
 # What is Timeago?
 Timeago is a fast, lightweight date and time library that converts a given date into a “time ago” format. It calculates and displays the time difference between the specified date and the current date, supporting both past and future dates for versatile use.
 
 ## Features
 The package has several nice features, such as:
 
-- 📅 Flexible date parsing, supporting both [past and future dates](/v2/get-started.html#usage-with-the-date-in-the-future)
+- 📅 Flexible date parsing, supporting both [past and future dates](/v2.html#usage-with-the-date-in-the-future)
 - ⚙️ Configurable [options](/options) to suit various use cases
 - ✅ Comprehensive test coverage for reliability
 - 🌐 Support for multiple languages

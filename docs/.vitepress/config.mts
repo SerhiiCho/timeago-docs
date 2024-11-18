@@ -52,7 +52,7 @@ export default defineVersionedConfig(
                     {
                         text: 'Guide',
                         items: [
-                            { text: 'Get Started', link: '/v2/get-started' },
+                            { text: 'Get Started', link: '/v2' },
                             { text: 'Configure', link: '/v2/configurations' },
                             { text: 'Options', link: '/v2/options' },
                         ],

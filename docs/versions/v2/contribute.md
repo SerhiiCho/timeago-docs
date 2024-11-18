@@ -4,6 +4,10 @@ search: false
 title: Contribute - v2
 ---
 
+:::warning
+This is the `v2` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+:::
+
 # Contribute translation
 You can contribute a language support in 3 simple steps. All you need to do is to copy/paste 2 files and change them to match the language that you want to add.
 

@@ -4,6 +4,10 @@ search: false
 title: Options - v2
 ---
 
+:::warning
+This is the `v2` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+:::
+
 # Options
 As the seconds argument `Parse()` method excepts strings. Here is an example of passed option.
 
