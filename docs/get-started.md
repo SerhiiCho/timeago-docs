@@ -1,6 +1,5 @@
 ---
 outline: deep
-title: Guide
 ---
 
 # Guide

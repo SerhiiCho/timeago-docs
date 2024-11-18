@@ -45,6 +45,7 @@ export default defineVersionedConfig(
                     component: 'VersionSwitcher',
                 },
                 { text: 'Get Started', link: '/get-started' },
+                { text: 'Community', link: '/community' },
                 {
                     text: 'Changelog',
                     link: 'https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md',
