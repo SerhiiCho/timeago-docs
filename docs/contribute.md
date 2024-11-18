@@ -73,6 +73,17 @@ Here's the example of `ru.json`
 
 In this file we don't actually need to define the `few` field, since the the fallback is also matches the `few`, but I just wanted to demonstrate the full version of the file so that you have an idea how many fields are there.
 
+### Fields
+Let me give you a little bit more explanation about the fields in the file:
+
+- `"format": "{num} {timeUnit} {ago}"` - This is the format of the output string.
+  - `{num}` is the number of time units like `1`, `2`, `3`, etc.
+  - `{timeUnit}` is the time unit itself like `second`, `minute`, `hour`, etc.
+  - `{ago}` is the word that is used to indicate that the time is in the past or in the future.
+- `"ago": "назад"` - This is the word that is used to indicate that the time is in the past.
+- `"online": "В сети"` - This is the word that is used to indicate that the user is online.
+- `"justnow": "Только что"` - This is the word that is used to indicate that the time is just now. When the time is less than 1 minute
+
 ## Step 2. Add language rules
 All rules for each language is defined in `grammarRules` variable in [rules.go](https://github.com/SerhiiCho/timeago/blob/main/rules.go) file. Rule is just a set of conditions that define when to apply particular form from the language set.
 
@@ -98,8 +109,6 @@ In these rules we tell that Timeago should use the `one` form when number is `1`
 
 ```go
 var grammarRules = func(num int) map[string]*Rule {
-	end := num % 10
-
 	return map[string]*Rule{
 		"en": {
 			Zero: num == 0,
@@ -133,4 +142,4 @@ var grammarRules = func(num int) map[string]*Rule {
 English, Dutch and German languages have the same rules for plural forms, so we can just add them to the same rule key.
 
 ## Step 3. Add tests
-Tests for languages live in `tests` directory. Each language has it's own file. The easies way to add tests for your language is to copy paste one of the tests and change it to match your language.
+Tests for languages live in `tests` directory. Each language has it's own file. The easies way to add tests for your language is to copy paste one of the tests and change the test cases to match your language.

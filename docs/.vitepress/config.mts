@@ -1,4 +1,6 @@
 import defineVersionedConfig from 'vitepress-versioning-plugin'
+import type { MarkdownEnv } from 'vitepress'
+import MarkdownIt from 'markdown-it'
 
 export default defineVersionedConfig(
     {
@@ -12,6 +14,12 @@ export default defineVersionedConfig(
             latestVersion: 'v3 (latest)',
         },
 
+        lastUpdated: true,
+
+        sitemap: {
+            hostname: 'https://time-ago.github.io',
+        },
+
         themeConfig: {
             versionSwitcher: false,
             logo: '/images/logo.png',
@@ -20,6 +28,10 @@ export default defineVersionedConfig(
                     'Released under the <a href="https://github.com/SerhiiCho/timeago/blob/main/LICENSE.md" target="_blank">MIT License</a>',
                 copyright:
                     'Copyright © 2018 - present <a href="https://serhii.io/about-me" target="_blank">Serhii Cho</a>',
+            },
+
+            search: {
+                provider: 'local',
             },
 
             nav: [

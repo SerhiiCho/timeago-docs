@@ -1,5 +1,6 @@
 ---
 layout: home
+search: false
 
 hero:
   name: "Timeago v2"
