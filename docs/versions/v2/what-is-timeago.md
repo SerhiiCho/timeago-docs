@@ -4,7 +4,7 @@ search: false
 title: What is Timeago? - v2
 ---
 
-:::warning
+:::danger Outdated version
 This is the `v2` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
 :::
 

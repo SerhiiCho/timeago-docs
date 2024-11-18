@@ -19,7 +19,10 @@ export default defineVersionedConfig(
 
             // exclude old version pages from sitemap
             transformItems: items => {
-                return items.filter(item => !item.url.startsWith('v2/'))
+                return items.filter(
+                    item =>
+                        !item.url.startsWith('v2/') && !item.url.startsWith('v1/'),
+                )
             },
         },
 
@@ -48,6 +51,11 @@ export default defineVersionedConfig(
                 },
             ],
             sidebar: {
+                '/v1/': [
+                    { text: 'Get Started', link: '/v1' },
+                    { text: 'Contribute', link: '/v1/contribute' },
+                    { text: 'Configure', link: '/v1/configurations' },
+                ],
                 '/v2/': [
                     {
                         text: 'Guide',

@@ -1,30 +1,27 @@
 ---
 outline: deep
 search: false
-title: Contribute - v2
+title: Contribute - v1
 ---
 
 :::danger Outdated version
-This is the `v2` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+This is the `v1` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
 :::
 
-# Contribute translation
-You can contribute a language support in 3 simple steps. All you need to do is to copy/paste 2 files and change them to match the language that you want to add.
+## Contribute translation
 
-Here is my [commit](https://github.com/SerhiiCho/timeago/commit/c1ee0429b540f1cce5eb61b6a3441022d9cb43e7) for supporting Dutch language that shows changes that I did to add the support. It's pretty straightforward. Waiting for you PR 😉.
+If you want to contribute support for a language that is fully supported, all you need to do is to copy/paste 2 files and change them to match the language that you want to add.
 
-:::tip
-You can skip the step with `README.md` file, since all the documentation is here instead of a `README.md` file like it was before.
-:::
+After than, add 1 line to `README.md` file and 1 rule to a `rules.go`. Here is my [commit](https://github.com/SerhiiCho/timeago/commit/d2f9e7f41d17ea3fc8ee10df2e1ac2e47f8e7e69) for supporting Ukrainian language that shows changes that I did to add the support. It's pretty straightforward. Waiting for you PR 😉.
 
-## Step 1. Add translation file
-Translation files live in `langs` directory. Each translation file is pretty simple JSON object. Here's the example of `en.json`.
+### Translation files
+
+Translation files live in `langs` directory. Each translation file is pretty simple json. Here's the example of `en.json`.
 
 ```json
 {
     "Ago": "ago",
     "Online": "Online",
-    "JustNow": "Just now",
     "Second": "second",
     "Seconds": "seconds",
     "Minute": "minute",
@@ -48,7 +45,6 @@ Some languages (like Russian) have multiple plural forms of the word. For exampl
 {
     "Ago": "назад",
     "Online": "В сети",
-    "JustNow": "Только что",
     "Second": "секунда",
     "Seconds": "секунды",
     "SecondsSpecial": "секунд",
@@ -73,16 +69,17 @@ Some languages (like Russian) have multiple plural forms of the word. For exampl
 }
 ```
 
-You can see that it has `SecondsSpecial`, `MinutesSpecial`, `HoursSpecial`, `DaysSpecial`, `WeeksSpecial` and `YearsSpecial` keys. Those are responsible for special age cases.
+You can see that it has `SecondsSpecial`, `MinutesSpecial`, `HoursSpecial`, `DaysSpecial`, `WeeksSpecial` and `YearsSpecial` keys.
 
-## Step 2. Add language rules
+### Rules
+
 All rules for each language is defined in `getRules` function in `rules.go` file. Rule is just a set of conditions that define when to apply singular form and when to apply plural form.
 
 Here is the example for English rules:
 
 ```go
-func getRules(number, lastDigit int) map[string]Rule {
-	return map[string]Rule{
+func getRules(number, lastDigit int) map[string]models.Rule {
+	return map[string]models.Rule{
 		"en": {
 			Single: number == 1,
 			Plural: number > 1 || number == 0,
@@ -92,6 +89,3 @@ func getRules(number, lastDigit int) map[string]Rule {
 ```
 
 We'll use singular form when number is equal to 1, and plural if number is more than 1 or number is 0. You can easily write your own rules for your language.
-
-## Step 3. Add tests
-Tests for languages live in `tests` directory. Each language has it's own file. The easies way to add tests for your language is to copy paste one of the tests and change it to match your language.
