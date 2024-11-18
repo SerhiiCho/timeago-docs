@@ -51,7 +51,11 @@ Future dates are also supported. The package will return the correct string with
 ```go
 pastDate := time.Now().Add(time.Hour * 2)
 
-res := timeago.Parse(pastDate)
+res, err := timeago.Parse(pastDate)
+
+if err != nil {
+    fmt.Println(err)
+}
 
 fmt.Println(res) // 2 hours
 ```
