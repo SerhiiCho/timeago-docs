@@ -1,6 +1,7 @@
 ---
 outline: deep
 search: false
+title: Options - v2
 ---
 
 # Options

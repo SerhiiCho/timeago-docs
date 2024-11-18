@@ -1,6 +1,4 @@
 import defineVersionedConfig from 'vitepress-versioning-plugin'
-import type { MarkdownEnv } from 'vitepress'
-import MarkdownIt from 'markdown-it'
 
 export default defineVersionedConfig(
     {
@@ -18,6 +16,11 @@ export default defineVersionedConfig(
 
         sitemap: {
             hostname: 'https://time-ago.github.io',
+
+            // exclude old version pages from sitemap
+            transformItems: items => {
+                return items.filter(item => !item.url.startsWith('v2/'))
+            },
         },
 
         themeConfig: {

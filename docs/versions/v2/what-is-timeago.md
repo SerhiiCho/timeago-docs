@@ -1,6 +1,7 @@
 ---
 outline: deep
 search: false
+title: What is Timeago? - v2
 ---
 
 # What is Timeago?

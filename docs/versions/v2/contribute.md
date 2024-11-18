@@ -1,6 +1,7 @@
 ---
 outline: deep
 search: false
+title: Contribute - v2
 ---
 
 # Contribute translation

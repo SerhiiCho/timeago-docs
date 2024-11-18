@@ -1,6 +1,7 @@
 ---
 layout: home
 search: false
+title: Timeago v2 (outdated)
 
 hero:
   name: "Timeago v2"

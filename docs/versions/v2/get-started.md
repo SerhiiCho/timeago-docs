@@ -1,6 +1,7 @@
 ---
 outline: deep
 search: false
+title: Guide - v2
 ---
 
 # Guide

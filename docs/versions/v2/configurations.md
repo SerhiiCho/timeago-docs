@@ -1,6 +1,7 @@
 ---
 outline: deep
 search: false
+title: Configurations - v2
 ---
 
 # Configurations
