@@ -4,7 +4,7 @@ description: Learn how to configure the package with different options like lang
 ---
 
 # Configurations
-We can set package configurations with `Configure` function that accepts `Config` struct.
+We can set package configurations with `Configure` function that accepts a `Config` struct.
 
 ## Language
 Optionally you can set the language in your application.
@@ -15,7 +15,7 @@ Optionally you can set the language in your application.
 import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    timeago.Configure(&timeago.Config{
+    timeago.Configure(timeago.Config{
         Language: "ru",
     })
 }
@@ -34,7 +34,7 @@ strings. If you date string is in the server's timezone **you don't need to set 
 import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    timeago.Configure(&timeago.Config{
+    timeago.Configure(timeago.Config{
         Location: "America/New_York",
     })
 }
@@ -49,7 +49,7 @@ There are cases when you want to replace certain words with specific ones. For e
 import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    timeago.Configure(&timeago.Config{
+    timeago.Configure(timeago.Config{
 		Translations: []timeago.Translation{
 			{
 				Language: "en",
@@ -72,7 +72,7 @@ After this configuration, instead of getting, for example, `4 days ago` you'll g
 import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    timeago.Configure(&timeago.Config{
+    timeago.Configure(timeago.Config{
 		Translations: []timeago.Translation{
 			{
 				Language: "ru",
