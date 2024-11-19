@@ -1,9 +1,10 @@
 ---
 outline: deep
+description: Learn how to configure the package with different options like language, location, and translations
 ---
 
 # Configurations
-We can set package configurations with `SetConfig` function that accepts `Config` structure.
+We can set package configurations with `Configure` function that accepts `Config` struct.
 
 ## Language
 Optionally you can set the language in your application.

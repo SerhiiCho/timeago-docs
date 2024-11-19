@@ -1,5 +1,6 @@
 ---
 outline: deep
+description: Learn how to quickly get started with the Timeago package
 ---
 
 # Guide

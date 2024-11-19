@@ -22,7 +22,7 @@ go get -u github.com/SerhiiCho/timeago/v2
 Pass the date to `timeago.Parse()` function. It counts the interval between current datetime and given datetime and returns parsed string in format `x time ago`. The package can work not only with dates in the past but future dates as well. The usage is pretty straight forward.
 
 ### Allowed types
-Method `timeago.Parse()` excepts different types of datetime:
+Function `timeago.Parse()` excepts different types of datetime:
 
 - `int` Unix timestamp
 - `time.Time` Type from Go time package

@@ -47,7 +47,7 @@ go get -u github.com/SerhiiCho/timeago
 
 ## Usage
 
-For outputting post publishing date or something else you can just pass the date to method `timeago.Take()`. It will count the interval between now and given date and returns converted format.
+For outputting post publishing date or something else you can just pass the date to function `timeago.Take()`. It will count the interval between now and given date and returns converted format.
 
 ```go
 timeago.Take("2019-10-23 10:46:00") // after 10 seconds outputs: 10 seconds ago

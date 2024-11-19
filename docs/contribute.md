@@ -1,5 +1,6 @@
 ---
 outline: deep
+description: Manual for contributing to the Timeago project by adding a new language support
 ---
 
 # Contribute translation

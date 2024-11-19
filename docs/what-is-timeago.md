@@ -1,9 +1,10 @@
 ---
 outline: deep
+description: Learn about Timeago, a fast, lightweight date and time library that converts a given date into a "time ago" format
 ---
 
 # What is Timeago?
-Timeago is a fast, lightweight date and time library that converts a given date into a “time ago” format. It calculates and displays the time difference between the specified date and the current date, supporting both past and future dates for versatile use.
+Timeago is a fast, lightweight date and time library that converts a given date into a "time ago" format. It calculates and displays the time difference between the specified date and the current date, supporting both past and future dates for versatile use.
 
 ## Features
 The package has several nice features, such as:

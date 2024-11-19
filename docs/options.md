@@ -1,9 +1,10 @@
 ---
 outline: deep
+description: Modify the output by passing additional options to the Parse function
 ---
 
 # Options
-As the seconds argument `Parse()` method excepts strings. Here is an example of passed option.
+As the seconds argument `Parse()` function excepts strings. Here is an example of passed option.
 
 ## Example with one option
 ```go

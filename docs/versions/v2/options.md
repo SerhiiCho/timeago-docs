@@ -9,7 +9,7 @@ This is the `v2` version of Timeago package that is outdated. You can [switch to
 :::
 
 # Options
-As the seconds argument `Parse()` method excepts strings. Here is an example of passed option.
+As the seconds argument `Parse()` function excepts strings. Here is an example of passed option.
 
 ## Example with one option
 ```go
