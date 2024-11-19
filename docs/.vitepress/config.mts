@@ -44,7 +44,7 @@ export default defineVersionedConfig(
                 {
                     component: 'VersionSwitcher',
                 },
-                { text: 'Get Started', link: '/get-started' },
+                { text: 'Documentation', link: '/get-started' },
                 { text: 'Community', link: '/community' },
                 {
                     text: 'Changelog',
