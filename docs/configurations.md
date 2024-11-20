@@ -4,7 +4,13 @@ description: Learn how to configure the package with different options like lang
 ---
 
 # Configurations
-We can set package configurations with `Configure` function that accepts a `Config` struct.
+We can update package configurations with `Configure` function that accepts a `Config` struct.
+
+:::warning
+If you call `Configure` function multiple times it will not overwrite the previous configurations. It will merge them. So if you already configured the package buy down the road want to change only a specific configuration, you can do it without worrying about the rest.
+
+If you want to override the previous configurations, use `Reconfigure` function instead.
+:::
 
 ## Language
 Optionally you can set the language in your application.
@@ -97,4 +103,6 @@ type LangSet struct {
 
 :::tip Keep in mind
 The `Lang` field in the `LangSet` struct is the language you want to overwrite. If you want to overwrite the translation for multiple languages, you can add multiple `LangSet` structs to the `Translations` field in the `Config`.
+
+If you provide a language code that is not defined, it will be ignored.
 :::
