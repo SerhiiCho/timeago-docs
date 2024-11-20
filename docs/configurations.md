@@ -42,54 +42,59 @@ func main() {
 
 Example locations: `America/New_York`, `Asia/Tokyo`, `Australia/Sydney`.
 
-## Overwrite translations
-There are cases when you want to replace certain words with specific ones. For example you might want to replace "days" with "d" to get "4 d ago". You can do it with by setting specific configurations for each language. Let's see the example where we want to overwrite words for English language:
+## Translation overwrites
+There are cases when you want to replace certain words with specific ones. For example you might want to replace the word `days` with `d` to get `4 d ago`. Or, you might want to replace the word `ago`, `Just now`, `Online` with your own to match your application's needs.
+
+With translation overwrites you can even change the order of the words in the final output or even extend it. For example, you can change `4 days ago` to `It's been 4 days`.
+
+You can do it with any language supported by Timeago. Let's see the example where we wan't to get the output of `4d`, `4w` instead of `4 days ago`, `4 weeks ago` for English language.
 
 ```go
 import "github.com/SerhiiCho/timeago/v3"
 
 func main() {
+    customTrans := []timeago.LangSet{
+        {
+            Lang: "en",
+            Format: "{num}{timeUnit}",
+            Day: timeago.LangForms{
+                "one":   "d",
+                "other": "d",
+            },
+            Week: timeago.LangForms{
+                "one":   "w",
+                "other": "w",
+            },
+        },
+    }
+
     timeago.Configure(timeago.Config{
-		Translations: []timeago.Translation{
-			{
-				Language: "en",
-				Translations: map[string]string{
-					"days":  "d",
-					"day":   "d",
-					"weeks": "w",
-					"week":  "w",
-					"ago":   "",
-				},
-			},
-		},
-	})
+        Translations: customTrans,
+    })
 }
 ```
 
-After this configuration, instead of getting, for example, `4 days ago` you'll get `4 d` and instead of `1 week ago` you'll get `1 w`. For other languages it's pretty much the same thing:
+Here is the `LangSet` struct for reference to give you an idea of what fields you can overwrite:
 
 ```go
-import "github.com/SerhiiCho/timeago/v3"
+type LangForms map[string]string
 
-func main() {
-    timeago.Configure(timeago.Config{
-		Translations: []timeago.Translation{
-			{
-				Language: "ru",
-				Translations: map[string]string{
-					"день":  "д",
-					"дня":   "д",
-					"дней":  "д",
-					"назад": "",
-				},
-			},
-		},
-	})
+type LangSet struct {
+	Lang    string    `json:"lang"`
+	Format  string    `json:"format"`
+	Ago     string    `json:"ago"`
+	Online  string    `json:"online"`
+	JustNow string    `json:"justnow"`
+	Second  LangForms `json:"second"`
+	Minute  LangForms `json:"minute"`
+	Hour    LangForms `json:"hour"`
+	Day     LangForms `json:"day"`
+	Week    LangForms `json:"week"`
+	Month   LangForms `json:"month"`
+	Year    LangForms `json:"year"`
 }
 ```
 
-With this configurations, you'll get `5 д` instead of `5 дней назад`.
-
-:::tip Supported words
-You can find the full list of words that you can overwrite in `langs/` directory in the root of the project, or you can find them in our [GitHub repository](https://github.com/SerhiiCho/timeago/tree/main/langs).
+:::tip Keep in mind
+The `Lang` field in the `LangSet` struct is the language you want to overwrite. If you want to overwrite the translation for multiple languages, you can add multiple `LangSet` structs to the `Translations` field in the `Config`.
 :::
