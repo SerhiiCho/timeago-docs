@@ -15,6 +15,7 @@ Here's the example of `ru.json`
 
 ```json
 {
+    "lang": "ru",
     "format": "{num} {timeUnit} {ago}",
     "ago": "назад",
     "online": "В сети",
@@ -77,6 +78,7 @@ In this file we don't actually need to define the `few` field, since the the fal
 ### Fields
 Let me give you a little bit more explanation about the fields in the file:
 
+- `"lang": "ru"` - The language code based on the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard.
 - `"format": "{num} {timeUnit} {ago}"` - This is the format of the output string.
   - `{num}` is the number of time units like `1`, `2`, `3`, etc.
   - `{timeUnit}` is the time unit itself like `second`, `minute`, `hour`, etc.

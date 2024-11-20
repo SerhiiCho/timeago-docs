@@ -6,13 +6,16 @@ description: Detailed guide on how to upgrade Timeago from v2 to v3
 # Upgrade Guide from v2 to v3
 Timeago `v3` was a major release with the full rewrite of the library. It gave us a better and easier way to add support for a new language and improved error handling. This guide will help you to upgrade from `v2` to `v3`.
 
-## Changes
-- **Improved error handling**. The `Parse` function now returns an error as the second returned value
+I've decided to not include new features in this release to make the upgrade process as smooth as possible. I'll add them in the next feature release. The version `3.0.0` focuses on the package API changes.
+
+## Breaking Changes
 - **Update package namespace**. Changed package namespace to `github.com/SerhiiCho/timeago/v3`
 - **Rename a function**. Renamed `SetConfig` function to `Configure` to make it better fit into Go naming conventions
-- **New language files structure**. Change the file structure for `JSON` language files. They have now format to match [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules)
+
+## Improvements
+- **Improved error handling**. The `Parse` function now returns an error as the second returned value
 - **New language addition is improved**. Add ability to change the output of the `Parse` function when adding a support for a new language by adding a `format` field to a `JSON` file
-- **Overwriting translation API change**. Change the API for setting custom translations to overwrite default translations. The `JSON` file structures for languages `en.json`, `ru.json`, etc., are now different
+- **New language files structure**. Change the file structure for `JSON` language files. They have now format to match [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules)
 
 ## Upgrade steps
 
@@ -46,23 +49,45 @@ Rename the `SetConfig` function to `Configure` all over your codebase.
 If you use translation overwrites, you need to update the structure of the `timeago.Translation` struct. Here is the old way to overwrite translations:
 
 ```go
-timeago.Configure(timeago.Config{
-    Translations: []timeago.Translation{
-        {
-            Language: "en",
-            Translations: map[string]string{
-                "days":  "d",
-                "day":   "d",
-                "weeks": "w",
-                "week":  "w",
-                "ago":   "",
-            },
+customTrans := []timeago.Translation{
+    {
+        Language: "en",
+        Translations: map[string]string{
+            "days":  "d",
+            "day":   "d",
+            "weeks": "w",
+            "week":  "w",
+            "ago":   "",
         },
     },
+},
+
+timeago.Configure(timeago.Config{
+    Translations: customTrans,
 })
 ```
 
-The new way to overwrite translations:
+Here is the same code with the new structure:
 
 ```go
+customTrans := []timeago.LangSet{
+    {
+        Lang: "en",
+        Ago:  "",
+        Day: timeago.LangForms{
+            "one":   "d",
+            "other": "d",
+        },
+        Week: timeago.LangForms{
+            "one":   "w",
+            "other": "w",
+        },
+    },
+}
+
+timeago.Configure(timeago.Config{
+    Translations: customTrans,
+})
 ```
+
+I've changed the structure because the `v3` version now supports the [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules. You can now define different forms for different numbers of units for difficult languages like Slavic, Arabic, and others. Which was impossible in the previous version.
