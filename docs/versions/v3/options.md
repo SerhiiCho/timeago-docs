@@ -1,5 +1,6 @@
 ---
 outline: deep
+title: Options - v3
 description: Modify the output by passing additional options to the Parse function
 ---
 

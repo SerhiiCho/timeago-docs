@@ -1,5 +1,6 @@
 ---
 outline: deep
+title: What is Timeago - v3
 description: Learn about Timeago, a fast, lightweight date and time library that converts a given date into a "time ago" format
 ---
 
@@ -9,11 +10,11 @@ Timeago is a fast, lightweight date and time library that converts a given date 
 ## Features
 The package has several nice features, such as:
 
-- 📅 Flexible date parsing, supporting both [past and future dates](get-started.html#usage-with-the-date-in-the-future)
-- ⚙️ Configurable [options](/options) to suit various use cases
+- 📅 Flexible date parsing, supporting both [past and future dates](/v3/#usage-with-the-date-in-the-future)
+- ⚙️ Configurable [options](/v3/options) to suit various use cases
 - ✅ Comprehensive test coverage for reliability
 - 🌐 Support for multiple languages
-- ✍️ Easy [contribution](/contribute) of new language support
+- ✍️ Easy [contribution](/v3/contribute) of new language support
 - 📦 Compact codebase for minimal footprint
 - 🚀 Regular, non-breaking updates
 - 🕰️ Unix timestamp parsing
@@ -23,7 +24,7 @@ The package has several nice features, such as:
 - 📖 Thorough documentation for ease of use
 
 ## Supported languages
-Timeago supports multiple languages, and you’re welcome to [contribute](/contribute) additional ones. Check out the languages currently available:
+Timeago supports multiple languages, and you’re welcome to [contribute](/v3/contribute) additional ones. Check out the languages currently available:
 
 | Flag | Language | Code (ISO 639-1) |
 | --- | --- | --- |

@@ -9,7 +9,7 @@ This is the `v2` version of Timeago package that is outdated. You can [switch to
 :::
 
 # Guide
-To read about the package, you can on [What is Timeago?](/what-is-timeago) page.
+To read about the package, you can on [What is Timeago?](/v2/what-is-timeago) page.
 
 ## Quick Start
 Package versioning is following the Go Modules versioning. To get the latest version of the package run the following command:

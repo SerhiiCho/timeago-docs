@@ -9,7 +9,7 @@ export default defineVersionedConfig(
             'Fast and lightweight date time package that converts given date into "n time ago" format',
 
         versioning: {
-            latestVersion: 'v3 (latest)',
+            latestVersion: 'v3',
         },
 
         lastUpdated: true,
@@ -43,9 +43,13 @@ export default defineVersionedConfig(
             nav: [
                 {
                     component: 'VersionSwitcher',
+                    props: {
+                        versions: ['v3', 'v2', 'v1'],
+                        latestVersion: 'v3',
+                    },
                 },
-                { text: 'Docs', link: '/get-started' },
-                { text: 'Community', link: '/community' },
+                { text: 'Docs', link: '/v3/' },
+                { text: 'Community', link: '/v3/community' },
                 {
                     text: 'Changelog',
                     link: 'https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md',
@@ -77,14 +81,14 @@ export default defineVersionedConfig(
                         ],
                     },
                 ],
-                '/': [
+                '/v3/': [
                     {
                         text: 'Guide',
                         items: [
-                            { text: 'Get Started', link: '/get-started' },
-                            { text: 'Configure', link: '/configurations' },
-                            { text: 'Options', link: '/options' },
-                            { text: 'Upgrade Guide', link: '/upgrade' },
+                            { text: 'Get Started', link: '/v3/' },
+                            { text: 'Configure', link: '/v3/configurations' },
+                            { text: 'Options', link: '/v3/options' },
+                            { text: 'Upgrade Guide', link: '/v3/upgrade' },
                         ],
                     },
                     {
@@ -92,9 +96,9 @@ export default defineVersionedConfig(
                         items: [
                             {
                                 text: 'What is Timeago?',
-                                link: '/what-is-timeago',
+                                link: '/v3/what-is-timeago',
                             },
-                            { text: 'Contribute', link: '/contribute' },
+                            { text: 'Contribute', link: '/v3/contribute' },
                         ],
                     },
                 ],

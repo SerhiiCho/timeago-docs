@@ -27,7 +27,7 @@ func main() {
 ```
 
 :::tip Supported languages
-You can find the full list of supported languages in the [What is Timeago?](/what-is-timeago.html#supported-languages) section.
+You can find the full list of supported languages in the [What is Timeago?](/v2/what-is-timeago.html#supported-languages) section.
 :::
 
 ## Location

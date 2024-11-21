@@ -1,5 +1,6 @@
 ---
 outline: deep
+title: Configurations - v3
 description: Learn how to configure the package with different options like language, location, and translations
 ---
 
@@ -28,7 +29,7 @@ func main() {
 ```
 
 :::tip Supported languages
-You can find the full list of supported languages in the [What is Timeago?](/what-is-timeago.html#supported-languages) section.
+You can find the full list of supported languages in the [What is Timeago?](/v3/what-is-timeago.html#supported-languages) section.
 :::
 
 ## Location

@@ -1,10 +1,11 @@
 ---
 outline: deep
+title: Get Started - v3
 description: Learn how to quickly get started with the Timeago package
 ---
 
 # Guide
-To read about the package, you can on [What is Timeago?](/what-is-timeago) page.
+To read about the package, you can on [What is Timeago?](/v3/what-is-timeago) page.
 
 ## Quick Start
 Package versioning is following the Go Modules versioning. To get the latest version of the package run the following command:

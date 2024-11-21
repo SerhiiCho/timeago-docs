@@ -1,5 +1,6 @@
 ---
 outline: deep
+title: Upgrade - v3
 description: Detailed guide on how to upgrade Timeago from v2 to v3
 ---
 
