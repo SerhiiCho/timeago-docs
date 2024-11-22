@@ -5,30 +5,65 @@ description: Modify the output by passing additional options to the Parse functi
 ---
 
 # Options
-As the seconds argument `Parse()` function excepts strings. Here is an example of passed option.
+The `Parse()` is a [variadic function](https://en.wikipedia.org/wiki/Variadic_function) that eccepts an indefinite number of string arguments after the first argument. It means that you can pass as many options as you want to modify the output.
 
 ## Example with one option
-```go
-currentTime := time.Now()
-hourAgo := currentTime.Add(-time.Hour)
+The most common way to use options is to pass a single option as a string. For example, if you want to display `Online` when the date interval is within 60 seconds, you can pass the `online` option like this:
 
-timeago.Parse(currentTime, "online") // Online
-timeago.Parse(currentTime, "justNow") // Just now
-timeago.Parse(hourAgo, "noSuffix") // 1 hour
+```go
+import (
+    "time"
+    "fmt"
+
+    "github.com/SerhiiCho/timeago/v3"
+)
+
+func main() {
+    tenSecondsAgo := time.Now().Add(-time.Second * 10)
+
+    out, err := timeago.Parse(currTime, "online")
+
+    if err != nil {
+        // handle the error
+    }
+
+    fmt.Println(out) // prints: "Online"
+}
 ```
 
 ## Example with multiple options
-```go
-currentTime := time.Now()
-hourAgo := currentTime.Add(-time.Hour)
+Let's see the example with multiple options where you want hide the suffix `ago` and display `Just now` if the date interval is within 60 seconds:
 
-timeago.Parse(currentTime, "online", "noSuffix") // Online
-timeago.Parse(hourAgo, "online", "noSuffix") // 1 hour
+```go
+import (
+    "time"
+    "fmt"
+
+    "github.com/SerhiiCho/timeago/v3"
+)
+
+func main() {
+    tenSecondsAgo := time.Now().Add(-time.Second * 10)
+
+    out, err := timeago.Parse(currTime, "justNow", "noSuffix")
+
+    if err != nil {
+        // handle the error
+    }
+
+    fmt.Println(out) // prints: "Just now"
+}
 ```
 
+But if we change the `tenSecondsAgo` to `time.Now().Add(-time.Minute * 2)` the output will be `2 minutes` because the `justNow` option is applicable only for the date interval within 60 seconds.
+
 ## Available options
+The full list of available options:
+
 | Option | Description |
 | --- | --- |
 | `online` | Displays **Online** if date interval withing 60 seconds. For example instead of `13 seconds ago` prints `Online` |
 | `justNow` | Displays **Just now** if date interval withing 60 seconds. For example instead of `32 seconds ago` prints `Just now`. |
 | `noSuffix` | Removes suffix from datetime result and get for example `5 minutes` instead of `5 minutes ago`. |
+
+This list will be updated with new useful options in the future if they are actually something that can be useful for the majority of users. If you want to suggest a new option, please create an issue on the [GitHub repository](https://github.com/SerhiiCho/timeago/issues)

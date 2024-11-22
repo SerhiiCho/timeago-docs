@@ -85,7 +85,8 @@ export default defineVersionedConfig(
                     {
                         text: 'Guide',
                         items: [
-                            { text: 'Get Started', link: '/v3/' },
+                            { text: 'Installation', link: '/v3/' },
+                            { text: 'Usage Guide', link: '/v3/usage' },
                             { text: 'Configure', link: '/v3/configurations' },
                             { text: 'Options', link: '/v3/options' },
                             { text: 'Upgrade Guide', link: '/v3/upgrade' },
