@@ -109,13 +109,17 @@ func main() {
 ```
 
 ```go [New way]
-import "github.com/SerhiiCho/timeago/v3"
+import (
+    "log"
+
+    "github.com/SerhiiCho/timeago/v3"
+)
 
 func main() {
 	out, err := timeago.Parse("2024-02-27 10:00:00")
 
     if err != nil {
-        // handle error
+        log.Fatalln(err)
     }
 
 	fmt.Println(out)
