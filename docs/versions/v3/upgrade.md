@@ -12,9 +12,9 @@ I've decided to not include new features in this release to make the upgrade pro
 ## Breaking Changes
 - **Update package namespace**. Changed package namespace to `github.com/SerhiiCho/timeago/v3`
 - **Rename a function**. Renamed `SetConfig` function to `Configure` to make it better fit into Go naming conventions
+- **Improved error handling**. The `Parse` function now returns an error as the second returned value. You need to handle it in your code
 
 ## Improvements
-- **Improved error handling**. The `Parse` function now returns an error as the second returned value
 - **New language addition is improved**. Add ability to change the output of the `Parse` function when adding a support for a new language by adding a `format` field to a `JSON` file
 - **New language files structure**. Change the file structure for `JSON` language files. They have now format to match [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules)
 - **New function `ClearCache`**. Added a new function to clear the cache of the package to free up memory when needed. It's also useful when you want to reload the language files without restarting the application.
