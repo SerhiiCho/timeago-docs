@@ -38,7 +38,7 @@ go mod tidy
 ```
 
 ### Step 3: Rename `SetConfig` function
-Rename the `SetConfig` function to `Configure` all over your codebase.
+Rename the `SetConfig` function to `Configure` or `Reconfigure` all over your codebase. You can read about the differences between them on the [Configurations](/v3/configurations.html) page.
 
 ```go
 timeago.SetConfig(timeago.Config{ // [!code --]
@@ -47,12 +47,10 @@ timeago.Configure(timeago.Config{ // [!code ++]
 })
 ```
 
-
 ### Step 4: Update translation overwrites
 If you use translation overwrites, you need to update the structure of the `timeago.Translation` struct. Here is the old way to overwrite translations:
 
 ::: code-group
-
 ```go [Old way]
 customTrans := []timeago.Translation{
     {
@@ -92,7 +90,35 @@ timeago.Configure(timeago.Config{
     Translations: customTrans,
 })
 ```
-
 :::
 
 We've made this change because the `v3` version now supports the [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules. You can now define different forms for different numbers of units for difficult languages like Slavic, Arabic, and others. Which was impossible in the previous version.
+
+### Step 5: Handle errors
+The `timeago.Parse()` function now returns 2 values: the result and an error. You need to handle the error for each call to the `Parse` function.
+
+::: code-group
+```go [Old way]
+import "github.com/SerhiiCho/timeago/v2"
+
+func main() {
+	out := timeago.Parse("2024-02-27 10:00:00")
+
+	fmt.Println(out)
+}
+```
+
+```go [New way]
+import "github.com/SerhiiCho/timeago/v3"
+
+func main() {
+	out, err := timeago.Parse("2024-02-27 10:00:00")
+
+    if err != nil {
+        // handle error
+    }
+
+	fmt.Println(out)
+}
+```
+:::
