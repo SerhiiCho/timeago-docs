@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /v2/
+Sitemap: https://time-ago.github.io/sitemap.xml
