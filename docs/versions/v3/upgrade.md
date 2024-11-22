@@ -25,9 +25,9 @@ I've decided to not include new features in this release to make the upgrade pro
 ### Step 1: Update package namespace
 Using your editor's find and replace functionality, update the package namespace from `github.com/SerhiiCho/timeago/v2` to `github.com/SerhiiCho/timeago/v3`.
 
-```diff
-- import "github.com/SerhiiCho/timeago/v2"
-+ import "github.com/SerhiiCho/timeago/v3"
+```go
+import "github.com/SerhiiCho/timeago/v2" // [!code --]
+import "github.com/SerhiiCho/timeago/v3" // [!code ++]
 ```
 
 ### Step 2: Update dependencies
@@ -40,9 +40,9 @@ go mod tidy
 ### Step 3: Rename `SetConfig` function
 Rename the `SetConfig` function to `Configure` all over your codebase.
 
-```diff
-- timeago.SetConfig(timeago.Config{
-+ timeago.Configure(timeago.Config{
+```go
+timeago.SetConfig(timeago.Config{ // [!code --]
+timeago.Configure(timeago.Config{ // [!code ++]
     Location: "America/New_York",
 })
 ```
@@ -51,7 +51,9 @@ Rename the `SetConfig` function to `Configure` all over your codebase.
 ### Step 4: Update translation overwrites
 If you use translation overwrites, you need to update the structure of the `timeago.Translation` struct. Here is the old way to overwrite translations:
 
-```go
+::: code-group
+
+```go [Old way]
 customTrans := []timeago.Translation{
     {
         Language: "en",
@@ -70,9 +72,7 @@ timeago.Configure(timeago.Config{
 })
 ```
 
-Here is the same code with the new structure:
-
-```go
+```go [New way]
 customTrans := []timeago.LangSet{
     {
         Lang: "en",
@@ -93,4 +93,6 @@ timeago.Configure(timeago.Config{
 })
 ```
 
-I've changed the structure because the `v3` version now supports the [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules. You can now define different forms for different numbers of units for difficult languages like Slavic, Arabic, and others. Which was impossible in the previous version.
+:::
+
+We've made this change because the `v3` version now supports the [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules. You can now define different forms for different numbers of units for difficult languages like Slavic, Arabic, and others. Which was impossible in the previous version.

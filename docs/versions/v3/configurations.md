@@ -21,7 +21,7 @@ Optionally you can set the language in your application.
 ```go
 import "github.com/SerhiiCho/timeago/v3"
 
-func main() {
+func init() {
     timeago.Configure(timeago.Config{
         Language: "ru",
     })
@@ -32,6 +32,10 @@ func main() {
 You can find the full list of supported languages in the [What is Timeago?](/v3/what-is-timeago.html#supported-languages) section.
 :::
 
+:::tip Configure in `init` or `main`?
+You can put the configuration in the `init` function or in the `main` function. It's up to you to decide.
+:::
+
 ## Location
 Location is the timezone location neeed for parsing string date like `2019-01-01 00:00:00`
 to `time.Time`. If Location is not set it will default to the server's location when parsing
@@ -40,7 +44,7 @@ strings. If you date string is in the server's timezone **you don't need to set 
 ```go
 import "github.com/SerhiiCho/timeago/v3"
 
-func main() {
+func init() {
     timeago.Configure(timeago.Config{
         Location: "America/New_York",
     })

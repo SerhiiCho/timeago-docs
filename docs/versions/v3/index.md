@@ -7,6 +7,10 @@ description: Learn how to quickly get started with the Timeago package by instal
 # Installation
 Here you can find how to install the Timeago package in your Go project and what are the requirements for it.
 
+:::tip What is Timeago?
+Visit our page "[What is Timeago?](/v3/what-is-timeago)" to learn more about the Timeago package and its mission.
+:::
+
 ## Quick start
 Package versioning is following the Go Modules versioning. To get the latest version of the package run the following command:
 

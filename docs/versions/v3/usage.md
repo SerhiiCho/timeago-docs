@@ -8,46 +8,61 @@ description: Learn how to quickly get started with the Timeago package
 Pass the date into the `timeago.Parse()` function. It counts the interval between current datetime and given datetime and returns parsed string in format `x time ago`. The package can work not only with dates in the past but future dates as well. The usage is pretty straight forward.
 
 ### Allowed types
-Function `timeago.Parse()` excepts different types of datetime and returns the result and error:
+Function `timeago.Parse()` excepts different types of datetime and returns the result and error. The allowed types are:
 
-- `int` Unix timestamp
+- `int` Unix timestamp.
+    - Example: `1642607826`
 - `time.Time` Type from Go time package
+    - Example: `time.Now()`
 - `string` Datetime string in format `YYYY-MM-DD HH:MM:SS`
-
-```go
-timeago.Parse("2019-10-23 10:46:00") // string date
-timeago.Parse(time.Now()) // time.Time
-timeago.Parse(1642607826) // Unix timestamp
-```
+    - Example: `2019-10-23 10:46:11`
 
 :::warning
 Any other type passed to the `Parse` function will return an error
 :::
 
-### Usage with the date in the past
+### Date in the past
+If you pass a date in the past, the package will return the output with `ago` word in it suggesting that the date is in the past. Unless you specify the `noSuffix` option. Read [here](/v3/options.html#available-options) about options and how to use them.
+
 ```go
-pastDate := time.Now().Add(-time.Hour)
+import (
+	"fmt"
+	"time"
 
-res, err := timeago.Parse(pastDate)
+	"github.com/SerhiiCho/timeago/v2"
+)
 
-if err != nil {
-    fmt.Println(err)
+func main() {
+	pastDate := time.Now().Add(-time.Minute * 5)
+	out, err := timeago.Parse(pastDate)
+
+	if err != nil {
+		// handle error
+	}
+
+	fmt.Println(out) // Output: "5 minutes ago"
 }
-
-fmt.Println(res) // 1 hour ago
 ```
 
-### Usage with the date in the future
-Future dates are also supported. The package will return the correct string without `ago` word in it.
+### Date in the future
+Future dates are also supported. The package will return the correct string without `ago` word in it when the date is in the future.
 
 ```go
-pastDate := time.Now().Add(time.Hour * 2)
+import (
+	"fmt"
+	"time"
 
-res, err := timeago.Parse(pastDate)
+	"github.com/SerhiiCho/timeago/v2"
+)
 
-if err != nil {
-    fmt.Println(err)
+func main() {
+    pastDate := time.Now().Add(time.Hour * 2)
+    res, err := timeago.Parse(pastDate)
+
+    if err != nil {
+        // handle error
+    }
+
+    fmt.Println(res) // Output: "2 hours"
 }
-
-fmt.Println(res) // 2 hours
 ```
