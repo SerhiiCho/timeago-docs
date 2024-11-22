@@ -5,7 +5,7 @@ description: Learn how to quickly get started with the Timeago package by instal
 ---
 
 # Installation
-Here you can find how to install the Timeago package in your Go project and what are the requirements for it.
+Read how to install the Timeago in your Go project and what are the requirements for it.
 
 :::tip What is Timeago?
 Visit our page "[What is Timeago?](/v3/what-is-timeago)" to learn more about the Timeago package and its mission.
@@ -17,6 +17,8 @@ Package versioning is following the Go Modules versioning. To get the latest ver
 ```bash
 go get -u github.com/SerhiiCho/timeago/v3
 ```
+
+If you are using the `v2` version, follow the [Upgrade Guide](/v3/upgrade) to update your codebase to the `v3` version.
 
 ## Requirements
 You can find the minimum requirement version of Go for the Timeago package in the [go.mod](https://github.com/SerhiiCho/timeago/blob/main/go.mod) file on GitHub.

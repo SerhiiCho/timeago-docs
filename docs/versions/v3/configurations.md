@@ -5,18 +5,18 @@ description: Learn how to configure the package with different options like lang
 ---
 
 # Configurations
-We can update package configurations with `Configure` function that accepts a `Config` struct.
+You can update the package configuration using the `Configure` or `Reconfigure` function, both of which accept a `Config` struct. These functions can be called in your init function, main function, or anywhere in your codebase, as long as they are called before the `Parse` function. If not, the package will fall back to the default configuration.
 
-:::warning
-If you call `Configure` function multiple times it will not overwrite the previous configurations. It will merge them. So if you already configured the package buy down the road want to change only a specific configuration, you can do it without worrying about the rest.
+:::tip We have 2 configuration functions
+The `Configure` function allows incremental updates to the configuration. It merges the new settings with the existing ones, preserving any previously configured values. This means you can update specific settings without affecting the rest.
 
-If you want to override the previous configurations, use `Reconfigure` function instead.
+If you want to completely override the existing configuration, use the `Reconfigure` function instead. It resets all settings to their default values before applying the new configuration.
 :::
 
 ## Language
-Optionally you can set the language in your application.
+You can optionally set the language for your application. The default is `en` (English), but you can change it to any language supported by Timeago.
 
-> Default value is `"en"`
+The language code follows the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard. Here is an example of how to set the language to Russian:
 
 ```go
 import "github.com/SerhiiCho/timeago/v3"
@@ -32,14 +32,8 @@ func init() {
 You can find the full list of supported languages in the [What is Timeago?](/v3/what-is-timeago.html#supported-languages) section.
 :::
 
-:::tip Configure in `init` or `main`?
-You can put the configuration in the `init` function or in the `main` function. It's up to you to decide.
-:::
-
 ## Location
-Location is the timezone location neeed for parsing string date like `2019-01-01 00:00:00`
-to `time.Time`. If Location is not set it will default to the server's location when parsing
-strings. If you date string is in the server's timezone **you don't need to set this**.
+Location specifies the timezone needed for parsing a date string like `2019-01-01 00:00:00` into a Go's [`time.Time`](https://pkg.go.dev/time) object. If `Location` is not set, it defaults to the server's timezone. **You don’t need to set this** if your date string is already in the server’s timezone.
 
 ```go
 import "github.com/SerhiiCho/timeago/v3"
@@ -54,11 +48,11 @@ func init() {
 Example locations: `America/New_York`, `Asia/Tokyo`, `Australia/Sydney`.
 
 ## Translation overwrites
-There are cases when you want to replace certain words with specific ones. For example you might want to replace the word `days` with `d` to get `4 d ago`. Or, you might want to replace the word `ago`, `Just now`, `Online` with your own to match your application's needs.
+In some cases, you may want to customize certain words or phrases used in Timeago. For example, you might want to replace the word `days` with `d` to get `4d ago`, or adjust phrases like `ago`, `Just now`, and `Online` to better fit your application's needs.
 
-With translation overwrites you can even change the order of the words in the final output or even extend it. For example, you can change `4 days ago` to `It's been 4 days`.
+With translation overwrites, you can even modify the structure of the final output. For instance, you can change `4 days ago` to `It's been 4 days` or create entirely new formats.
 
-You can do it with any language supported by Timeago. Let's see the example where we wan't to get the output of `4d`, `4w` instead of `4 days ago`, `4 weeks ago` for English language.
+This feature works with any language supported by Timeago. Let’s look at an example where we customize the English language output to display `4d` or `4w` instead of `4 days ago` or `4 weeks ago`.
 
 ```go
 import "github.com/SerhiiCho/timeago/v3"
