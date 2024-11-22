@@ -106,3 +106,29 @@ The `Lang` field in the `LangSet` struct specifies the language you want to over
 
 If you provide a language code that is not supported, it will be ignored.
 :::
+
+### Modify the Output Format
+You can customize the output format using the `Format` field in the `LangSet` struct. This field allows you to define the structure of the final output. By default, the format is `{num} {timeUnit} {ago}`, as this is the most common arrangement in many languages. However, you can change it to match your requirements.
+
+For example, in German (supported by Timeago), the format is `{ago} {num} {timeUnit}`, which places the word `ago` at the beginning of the output. While English uses `10 minutes ago`, in German it becomes `Vor 10 Minuten`.
+
+To modify the output, simply update the `Format` field in the `LangSet` struct to your desired structure:
+
+```go
+import "github.com/SerhiiCho/timeago/v3"
+
+func main() {
+    customTrans := []timeago.LangSet{
+        {
+            Lang: "en",
+            Format: "It's been {num} {timeUnit}",
+        },
+    }
+
+    timeago.Configure(timeago.Config{
+        Translations: customTrans,
+    })
+}
+```
+
+After this change, you output will be `It's been 10 minutes` instead of `10 minutes ago`.
