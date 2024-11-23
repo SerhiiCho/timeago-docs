@@ -5,7 +5,9 @@ description: Learn about Timeago, a fast, lightweight date and time library that
 ---
 
 # What is Timeago?
-Timeago is a fast, lightweight date and time library that converts a given date into a "time ago" format. It calculates and displays the time difference between the specified date and the current date, supporting both past and future dates for versatile use.
+Timeago is a fast and lightweight library for working with dates and times. It transforms a given date into a human-readable "time ago" format, calculating the difference between the specified date and the current date. It supports both past and future dates, making it versatile for various use cases.
+
+With its simple API and support for multiple languages, Timeago seamlessly adapts to different applications, whether you're building user interfaces, handling localized content, or working with changing or real-time dates.
 
 ## Features
 The package has several nice features, such as:
@@ -19,7 +21,7 @@ The package has several nice features, such as:
 - 🚀 Regular, non-breaking updates
 - 🕰️ Unix timestamp parsing
 - ⏱️ Support for date-time strings in the `YYYY-MM-DD HH:MM:SS` format
-- 📆 Compatibility with time.Time from the Go standard library
+- 📆 Compatibility with `time.Time` struct from the Go standard library
 - 📝 Detailed [CHANGELOG.md](https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md) for all updates and features
 - 📖 Thorough documentation for ease of use
 
