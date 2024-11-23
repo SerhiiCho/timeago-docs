@@ -12,16 +12,15 @@ With its simple API and support for multiple languages, Timeago seamlessly adapt
 ## Features
 The library has several nice features, such as:
 
-- 📅 Flexible date parsing, supporting both [past and future dates](/v3/#usage-with-the-date-in-the-future)
-- ⚙️ Configurable [options](/v3/options) to suit various use cases
+- 📅 Flexible date parsing, supporting both [past and future dates](/v3/usage.html#date-in-the-past)
+- ⚙️ Configurable library with ability to pass [options](/v3/options) to suit various use cases, [override translations](/configurations.html#translation-overrides) or [modify the output format](/v3/configurations.html#modify-the-output-format)
 - ✅ Comprehensive test coverage for reliability
-- 🌐 Support for multiple languages
-- ✍️ Easy [contribution](/v3/contribute) of new language support
+- 🌐 Timeago support multiple languages such as English, Russian, Ukrainian, Dutch, German and you can contribute more
 - 📦 Compact codebase for minimal footprint
-- 🚀 Regular, non-breaking updates
 - 🕰️ Unix timestamp parsing
 - ⏱️ Support for date-time strings in the `YYYY-MM-DD HH:MM:SS` format
 - 📆 Compatibility with `time.Time` struct from the Go standard library
+- ✍️ Easy [contribution](/v3/contribute) of new language support
 - 📝 Detailed [CHANGELOG.md](https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md) for all updates and features
 - 📖 Thorough documentation for ease of use
 
