@@ -48,7 +48,7 @@ export default defineVersionedConfig(
                         latestVersion: 'v3',
                     },
                 },
-                { text: 'Docs', link: '/v3/' },
+                { text: 'Guide', link: '/v3/' },
                 { text: 'Community', link: '/v3/community' },
                 {
                     text: 'Changelog',
@@ -57,16 +57,16 @@ export default defineVersionedConfig(
             ],
             sidebar: {
                 '/v1/': [
-                    { text: 'Get Started', link: '/v1' },
+                    { text: 'Get Started', link: '/v1/' },
                     { text: 'Contribute', link: '/v1/contribute' },
-                    { text: 'Configure', link: '/v1/configurations' },
+                    { text: 'Configurations', link: '/v1/configurations' },
                 ],
                 '/v2/': [
                     {
                         text: 'Guide',
                         items: [
-                            { text: 'Get Started', link: '/v2' },
-                            { text: 'Configure', link: '/v2/configurations' },
+                            { text: 'Get Started', link: '/v2/' },
+                            { text: 'Configurations', link: '/v2/configurations' },
                             { text: 'Options', link: '/v2/options' },
                         ],
                     },
@@ -87,7 +87,7 @@ export default defineVersionedConfig(
                         items: [
                             { text: 'Installation', link: '/v3/' },
                             { text: 'Usage Guide', link: '/v3/usage' },
-                            { text: 'Configure', link: '/v3/configurations' },
+                            { text: 'Configurations', link: '/v3/configurations' },
                             { text: 'Options', link: '/v3/options' },
                             { text: 'Upgrade Guide', link: '/v3/upgrade' },
                         ],
