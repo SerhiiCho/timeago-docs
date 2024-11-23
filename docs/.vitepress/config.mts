@@ -33,7 +33,7 @@ export default defineVersionedConfig(
                 message:
                     'Released under the <a href="https://github.com/SerhiiCho/timeago/blob/main/LICENSE.md" target="_blank">MIT License</a>',
                 copyright:
-                    'Copyright © 2018 - present <a href="https://serhii.io/about-me" target="_blank">Serhii Cho</a>',
+                    'Copyright © 2019 - present <a href="https://serhii.io/about-me" target="_blank">Serhii Chornenkyi (Serhii Cho)</a>',
             },
 
             search: {
