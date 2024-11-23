@@ -1,11 +1,11 @@
 ---
 outline: deep
 title: Usage Guide - v3
-description: Learn how to quickly get started with the Timeago package
+description: Learn how to quickly get started with the Timeago library
 ---
 
 # Usage Guide
-Pass the date into the `timeago.Parse()` function. It counts the interval between current datetime and given datetime and returns parsed string in format `x time ago`. The package can work not only with dates in the past but future dates as well. The usage is pretty straight forward.
+Pass the date into the `timeago.Parse()` function. It counts the interval between current datetime and given datetime and returns parsed string in format `x time ago`. The library can work not only with dates in the past but future dates as well. The usage is pretty straight forward.
 
 ### Allowed types
 Function `timeago.Parse()` excepts different types of datetime and returns the result and error. The allowed types are:
@@ -22,7 +22,7 @@ Any other type passed to the `Parse` function will return an error
 :::
 
 ### Date in the past
-If you pass a date in the past, the package will return the output with `ago` word in it suggesting that the date is in the past. Unless you specify the `noSuffix` option. Read [here](/v3/options.html#available-options) about options and how to use them.
+If you pass a date in the past, Timeago will return the output with `ago` word in it suggesting that the date is in the past. Unless you specify the `noSuffix` option. Read [here](/v3/options.html#available-options) about options and how to use them.
 
 ```go
 import (
@@ -45,7 +45,7 @@ func main() {
 ```
 
 ### Date in the future
-Future dates are also supported. The package will return the correct string without `ago` word in it when the date is in the future.
+Future dates are also supported. Timeago will return the correct string without `ago` word in it when the date is in the future.
 
 ```go
 import (

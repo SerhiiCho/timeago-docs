@@ -7,7 +7,7 @@ description: Detailed guide on how to upgrade Timeago from v2 to v3
 # Upgrade Guide from v2 to v3
 Timeago `v3` was a major release with the full rewrite of the library. It gave us a better and easier way to add support for a new language and improved error handling. This guide will help you to upgrade from `v2` to `v3`.
 
-I've decided to not include new features in this release to make the upgrade process as smooth as possible. I'll add them in the next feature release. The version `3.0.0` focuses on the package API changes.
+I've decided to not include new features in this release to make the upgrade process as smooth as possible. I'll add them in the next feature release. The version `3.0.0` focuses on the Timeago API changes.
 
 ## Breaking Changes
 - **Update package namespace**. Changed package namespace to `github.com/SerhiiCho/timeago/v3`
@@ -17,7 +17,7 @@ I've decided to not include new features in this release to make the upgrade pro
 ## Improvements
 - **New language addition is improved**. Add ability to change the output of the `Parse` function when adding a support for a new language by adding a `format` field to a `JSON` file
 - **New language files structure**. Change the file structure for `JSON` language files. They have now format to match [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules)
-- **New function `Reconfigure`**. Added a new function to reconfigure the package configurations. Unlike the `Configure` function, it will overwrite the previous configurations with the new ones.
+- **New function `Reconfigure`**. Added a new function to reconfigure the Timeago configurations. Unlike the `Configure` function, it will overwrite the previous configurations with the new ones.
 
 ## Upgrade steps
 

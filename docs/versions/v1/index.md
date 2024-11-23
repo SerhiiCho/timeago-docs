@@ -5,7 +5,7 @@ title: Get Started - v1
 ---
 
 :::danger Outdated version
-This is the `v1` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+This is the `v1` version of Timeago library that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
 :::
 
 # Get Started

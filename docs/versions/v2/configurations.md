@@ -5,11 +5,11 @@ title: Configurations - v2
 ---
 
 :::danger Outdated version
-This is the `v2` version of Timeago package that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+This is the `v2` version of Timeago library that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
 :::
 
 # Configurations
-We can set package configurations with `SetConfig` function that accepts `Config` structure.
+We can set library configurations with `SetConfig` function that accepts `Config` structure.
 
 ## Language
 Optionally you can set the language in your application.
@@ -32,7 +32,7 @@ You can find the full list of supported languages in the [What is Timeago?](/v2/
 
 ## Location
 Optionally you can set the location in your application. The functionality is going to be the
-same, but with 1 exception. In the absence of time zone information, package interprets a time as UTC;
+same, but with 1 exception. In the absence of time zone information, library interprets a time as UTC;
 With location configuration it interprets the time as in the given location.
 
 :::warning

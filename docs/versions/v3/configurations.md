@@ -1,11 +1,11 @@
 ---
 outline: deep
 title: Configurations - v3
-description: Learn how to configure the package with different options like language, location, and translations
+description: Learn how to configure the library with different options like language, location, and translations
 ---
 
 # Configurations
-You can update the package configuration using the `Configure` or `Reconfigure` function, both of which accept a `Config` struct. These functions can be called in your init function, main function, or anywhere in your codebase, as long as they are called before the `Parse` function. If not, the package will fall back to the default configuration.
+You can update the library configuration using the `Configure` or `Reconfigure` function, both of which accept a `Config` struct. These functions can be called in your init function, main function, or anywhere in your codebase, as long as they are called before the `Parse` function. If not, the library will fall back to the default configuration.
 
 ## Two Configuration Functions
 The `Configure` function allows incremental updates to the configuration. It merges the new settings with the existing ones, preserving any previously configured values. This means you can update specific settings without affecting the rest.

@@ -10,7 +10,7 @@ Timeago is a fast and lightweight library for working with dates and times. It t
 With its simple API and support for multiple languages, Timeago seamlessly adapts to different applications, whether you're building user interfaces, handling localized content, or working with changing or real-time dates.
 
 ## Features
-The package has several nice features, such as:
+The library has several nice features, such as:
 
 - 📅 Flexible date parsing, supporting both [past and future dates](/v3/#usage-with-the-date-in-the-future)
 - ⚙️ Configurable [options](/v3/options) to suit various use cases
