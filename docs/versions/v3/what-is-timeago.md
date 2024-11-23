@@ -25,7 +25,7 @@ The library has several nice features, such as:
 - 📝 Detailed [CHANGELOG.md](https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md) for all updates and features
 - 📖 Thorough documentation for ease of use
 
-## Supported languages
+## Supported Languages
 Timeago supports multiple languages, and you’re welcome to [contribute](/v3/contribute) additional ones. Check out the languages currently available:
 
 | Flag | Language | Code (ISO 639-1) |

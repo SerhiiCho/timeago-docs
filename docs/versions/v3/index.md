@@ -11,7 +11,7 @@ Read how to install the Timeago in your Go project and what are the requirements
 Visit our page "[What is Timeago?](/v3/what-is-timeago)" to learn more about the Timeago library and its mission.
 :::
 
-## Quick start
+## Quick Start
 Library versioning is following the Go Modules versioning. To get the latest version of the library run the following command:
 
 ```bash

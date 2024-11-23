@@ -17,11 +17,11 @@ I've decided to not include new features in this release to make the upgrade pro
 ## Improvements
 - **New language addition is improved**. Add ability to change the output of the `Parse` function when adding a support for a new language by adding a `format` field to a `JSON` file
 - **New language files structure**. Change the file structure for `JSON` language files. They have now format to match [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules)
-- **New function `Reconfigure`**. Added a new function to reconfigure the Timeago configurations. Unlike the `Configure` function, it will overwrite the previous configurations with the new ones.
+- **New function `Reconfigure`**. Added a new function to reconfigure the Timeago configurations. Unlike the `Configure` function, it will override the previous configurations with the new ones.
 
-## Upgrade steps
+## Upgrade Steps
 
-### Step 1: Update package namespace
+### Step 1: Update Package Namespace
 Using your editor's find and replace functionality, update the package namespace from `github.com/SerhiiCho/timeago/v2` to `github.com/SerhiiCho/timeago/v3`.
 
 ```go
@@ -29,14 +29,14 @@ import "github.com/SerhiiCho/timeago/v2" // [!code --]
 import "github.com/SerhiiCho/timeago/v3" // [!code ++]
 ```
 
-### Step 2: Update dependencies
+### Step 2: Update Dependencies
 Run the command `go mod tidy` to update the dependencies in your `go.mod` file.
 
 ```bash
 go mod tidy
 ```
 
-### Step 3: Rename `SetConfig` function
+### Step 3: Rename `SetConfig` Function
 Rename the `SetConfig` function to `Configure` or `Reconfigure` all over your codebase. You can read about the differences between them on the [Configurations](/v3/configurations.html) page.
 
 ```go
@@ -46,8 +46,8 @@ timeago.Configure(timeago.Config{ // [!code ++]
 })
 ```
 
-### Step 4: Update translation overwrites
-If you use translation overwrites, you need to update the structure of the `timeago.Translation` struct. Here is the old way to overwrite translations:
+### Step 4: Update Translation Overrides
+If you use translation overrides, you need to update the structure of the `timeago.Translation` struct. Here is the old way to overrides translations:
 
 ::: code-group
 ```go [Old way]
@@ -93,7 +93,7 @@ timeago.Configure(timeago.Config{
 
 We've made this change because the `v3` version now supports the [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules. You can now define different forms for different numbers of units for difficult languages like Slavic, Arabic, and others. Which was impossible in the previous version.
 
-### Step 5: Handle errors
+### Step 5: Handle Errors
 The `timeago.Parse()` function now returns 2 values: the result and an error. You need to handle the error for each call to the `Parse` function.
 
 ::: code-group

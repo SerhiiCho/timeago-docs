@@ -21,7 +21,7 @@ Function `timeago.Parse()` excepts different types of datetime and returns the r
 Any other type passed to the `Parse` function will return an error
 :::
 
-### Date in the past
+### Date in the Past
 If you pass a date in the past, Timeago will return the output with `ago` word in it suggesting that the date is in the past. Unless you specify the `noSuffix` option. Read [here](/v3/options.html#available-options) about options and how to use them.
 
 ```go
@@ -44,7 +44,7 @@ func main() {
 }
 ```
 
-### Date in the future
+### Date in the Future
 Future dates are also supported. Timeago will return the correct string without `ago` word in it when the date is in the future.
 
 ```go

@@ -46,13 +46,13 @@ func init() {
 
 Example locations: `America/New_York`, `Asia/Tokyo`, `Australia/Sydney`.
 
-## Translation Overwrites
+## Translation Overrides
 In some cases, you may want to customize certain words or phrases used in Timeago. For example, you might want to replace the word `days` with `d` to get `4d ago`, or adjust phrases like `ago`, `Just now`, and `Online` to better fit your application's needs.
 
-With translation overwrites, you can even modify the structure of the final output. For instance, you can change `4 days ago` to `It's been 4 days` or create entirely new formats. This feature works with any language supported by Timeago.
+With translation overrides, you can even modify the structure of the final output. For instance, you can change `4 days ago` to `It's been 4 days` or create entirely new formats. This feature works with any language supported by Timeago.
 
-### Define Overwrites
-To overwrite translations, you need to create a `LangSet` struct and pass it to the `Translations` field in the `Config` struct. Let’s look at an example where we customize the English language output to display `4d` or `4w` instead of `4 days ago` or `4 weeks ago`:
+### Define Overrides
+To ioverride translations, you need to create a `LangSet` struct and pass it to the `Translations` field in the `Config` struct. Let’s look at an example where we customize the English language output to display `4d` or `4w` instead of `4 days ago` or `4 weeks ago`:
 
 ```go
 import "github.com/SerhiiCho/timeago/v3"
@@ -102,7 +102,7 @@ type LangSet struct {
 ```
 
 :::tip Target Language
-The `Lang` field in the `LangSet` struct specifies the language you want to overwrite. To overwrite translations for multiple languages, simply add multiple `LangSet` structs to the `Translations` field in the `Config`.
+The `Lang` field in the `LangSet` struct specifies the language you want to override. To override translations for multiple languages, simply add multiple `LangSet` structs to the `Translations` field in the `Config`.
 
 If you provide a language code that is not supported, it will be ignored.
 :::

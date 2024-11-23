@@ -7,7 +7,7 @@ description: Modify the output by passing additional options to the Parse functi
 # Options
 The `Parse()` is a [variadic function](https://en.wikipedia.org/wiki/Variadic_function) that eccepts an indefinite number of string arguments after the first argument. It means that you can pass as many options as you want to modify the output.
 
-## Example with one option
+## Example With One Option
 The most common way to use options is to pass a single option as a string. For example, if you want to display `Online` when the date interval is within 60 seconds, you can pass the `online` option like this:
 
 ```go
@@ -31,7 +31,7 @@ func main() {
 }
 ```
 
-## Example with multiple options
+## Example With Multiple Options
 Let's see the example with multiple options where you want hide the suffix `ago` and display `Just now` if the date interval is within 60 seconds:
 
 ```go
@@ -57,7 +57,7 @@ func main() {
 
 But if we change the `tenSecondsAgo` to `time.Now().Add(-time.Minute * 2)` the output will be `2 minutes` because the `justNow` option is applicable only for the date interval within 60 seconds.
 
-## Available options
+## Available Options
 The full list of available options:
 
 | Option | Description |

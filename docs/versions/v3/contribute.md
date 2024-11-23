@@ -4,10 +4,10 @@ title: Contribute - v3
 description: Manual for contributing to the Timeago project by adding a new language support
 ---
 
-# Contribute translation
+# Contribute Translation
 You can contribute a language support in 3 simple steps. All you need to do is to copy/paste several files and change them to match the language that you want to add.
 
-## Step 1. Add language set file
+## Step 1. Add Language Set File
 Language set files live in [langs](https://github.com/SerhiiCho/timeago/tree/main/langs) directory. Each translation file is a JSON object with the name matching the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard of the language that you want to add.
 
 These files follow the [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules for each language. Keep in mind that the only required field that we need to define for time unit is `other`, since this field is used as a fallback if no other rule matches.
@@ -88,7 +88,7 @@ Let me give you a little bit more explanation about the fields in the file:
 - `"online": "В сети"` - This is the word that is used to indicate that the user is online.
 - `"justnow": "Только что"` - This is the word that is used to indicate that the time is just now. When the time is less than 1 minute
 
-## Step 2. Add language rules
+## Step 2. Add Language Rules
 All rules for each language is defined in `grammarRules` variable in [rules.go](https://github.com/SerhiiCho/timeago/blob/main/rules.go) file. Rule is just a set of conditions that define when to apply particular form from the language set.
 
 Here is the example for Russian rules:
@@ -145,5 +145,5 @@ var grammarRules = func(num int) map[string]*Rule {
 
 English, Dutch and German languages have the same rules for plural forms, so we can just add them to the same rule key.
 
-## Step 3. Add tests
+## Step 3. Add Tests
 Tests for languages live in `tests` directory. Each language has it's own file. The easies way to add tests for your language is to copy paste one of the tests and change the test cases to match your language.

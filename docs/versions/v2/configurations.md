@@ -53,8 +53,8 @@ func main() {
 Please make sure that timezone configuration is correct for your location. It is very important for displaying the correct datetime.
 :::
 
-## Overwrite translations
-There are cases when you want to replace certain words with specific ones. For example you might want to replace "days" with "d" to get "4 d ago". You can do it with by setting specific configurations for each language. Let's see the example where we want to overwrite words for English language:
+## Overrides translations
+There are cases when you want to replace certain words with specific ones. For example you might want to replace "days" with "d" to get "4 d ago". You can do it with by setting specific configurations for each language. Let's see the example where we want to override words for English language:
 
 ```go
 import "github.com/SerhiiCho/timeago/v2"
@@ -102,5 +102,5 @@ func main() {
 With this configurations, you'll get `5 д` instead of `5 дней назад`.
 
 :::tip Supported words
-You can find the full list of words that you can overwrite in `langs/` directory in the root of the project, or you can find them in our [GitHub repository](https://github.com/SerhiiCho/timeago/tree/main/langs).
+You can find the full list of words that you can override in `langs/` directory in the root of the project, or you can find them in our [GitHub repository](https://github.com/SerhiiCho/timeago/tree/main/langs).
 :::
