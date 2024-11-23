@@ -54,26 +54,32 @@ With translation overrides, you can even modify the structure of the final outpu
 ### Define Overrides
 To ioverride translations, you need to create a `LangSet` struct and pass it to the `Translations` field in the `Config` struct. Let’s look at an example where we customize the English language output to display `4d` or `4w` instead of `4 days ago` or `4 weeks ago`:
 
+:::tip Alias Package Name
+Consider using an alias like `ago` when importing the package to make your code more concise and readable. This is especially useful for complex configurations, such as overrides, where shorter references can improve clarity.
+
+I wouldn't suggest names like `time`, `t`, or `ta`, as they are too generic and can cause confusion with the standard `time` package.
+:::
+
 ```go
-import "github.com/SerhiiCho/timeago/v3"
+import ago "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    customTrans := []timeago.LangSet{
+    customTrans := []ago.LangSet{
         {
             Lang: "en",
             Format: "{num}{timeUnit}",
-            Day: timeago.LangForms{
+            Day: ago.LangForms{
                 "one":   "d",
                 "other": "d",
             },
-            Week: timeago.LangForms{
+            Week: ago.LangForms{
                 "one":   "w",
                 "other": "w",
             },
         },
     }
 
-    timeago.Configure(timeago.Config{
+    ago.Configure(ago.Config{
         Translations: customTrans,
     })
 }
