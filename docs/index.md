@@ -42,3 +42,5 @@ features:
     details: Timeago has a detailed changelog that covers all the updates and features of the library, so you can easily track the changes and updates
     icon: 📝
 ---
+
+<StarPopup />

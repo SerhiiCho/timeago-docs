@@ -32,7 +32,7 @@ You can find the full list of supported languages in the [Supported Languages](/
 :::
 
 ## Location
-Location specifies the timezone needed for parsing a date string like `2019-01-01 00:00:00` into a Go's [`time.Time`](https://pkg.go.dev/time) object. If `Location` is not set, it defaults to the server's timezone. **You don’t need to set this** if your date string is already in the server’s timezone.
+Location specifies the timezone needed for parsing a date string like `2019-01-01 00:00:00` into a Go's [`time.Time`](https://pkg.go.dev/time) object. If `Location` is not set, it defaults to the server's timezone. **You don't need to set this** if your date string is already in the server's timezone.
 
 ```go
 import "github.com/SerhiiCho/timeago/v3"
@@ -52,7 +52,7 @@ In some cases, you may want to customize certain words or phrases used in Timeag
 With translation overrides, you can even modify the structure of the final output. For instance, you can change `4 days ago` to `It's been 4 days` or create entirely new formats. This feature works with any language supported by Timeago.
 
 ### Define Overrides
-To ioverride translations, you need to create a `LangSet` struct and pass it to the `Translations` field in the `Config` struct. Let’s look at an example where we customize the English language output to display `4d` or `4w` instead of `4 days ago` or `4 weeks ago`:
+To ioverride translations, you need to create a `LangSet` struct and pass it to the `Translations` field in the `Config` struct. Let's look at an example where we customize the English language output to display `4d` or `4w` instead of `4 days ago` or `4 weeks ago`:
 
 :::tip Alias Package Name
 Consider using an alias like `ago` when importing the package to make your code more concise and readable. This is especially useful for complex configurations, such as overrides, where shorter references can improve clarity.
@@ -86,7 +86,7 @@ func main() {
 ```
 
 ### `LangSet` Definition
-To give you an idea of how to structure the `LangSet` object for fully customizing all translations, here’s the complete struct definition:
+To give you an idea of how to structure the `LangSet` object for fully customizing all translations, here's the complete struct definition:
 
 ```go
 type LangForms map[string]string
