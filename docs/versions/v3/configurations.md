@@ -61,7 +61,7 @@ In some cases, you may want to customize certain words or phrases used in Timeag
 With translation overrides, you can even modify the structure of the final output. For instance, you can change `4 days ago` to `It's been 4 days` or create entirely new formats. This feature works with any language supported by Timeago.
 
 ### Define Overrides
-To ioverride translations, you need to create a `LangSet` struct and pass it to the `Translations` field in the `Config` struct. Let's look at an example where we customize the English language output to display `4d` or `4w` instead of `4 days ago` or `4 weeks ago`:
+To override translations, you need to create a `LangSet` struct and pass it to the `Translations` field in the `Config` struct. Let's look at an example where we customize the English language output to display `4d` or `4w` instead of `4 days ago` or `4 weeks ago`:
 
 :::tip Alias Package Name
 Consider using an alias like `ago` when importing the package to make your code more concise and readable. This is especially useful for complex configurations, such as overrides, where shorter references can improve clarity.
