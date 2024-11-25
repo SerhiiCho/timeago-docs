@@ -27,10 +27,11 @@ The library has several nice features, such as:
 ## Supported Languages
 Timeago supports multiple languages, and you’re welcome to [contribute](/v3/contribute) additional ones. Check out the languages currently available:
 
-| Flag | Language | Code (ISO 639-1) |
-| --- | --- | --- |
-| 🇬🇧 | English | en |
-| 🇷🇺 | Russian | ru |
-| 🇺🇦 | Ukrainian | uk |
-| 🇳🇱 | Dutch | nl |
-| 🇩🇪 | German | de |
+| Flag | Language | Code (ISO 639-1) | Const |
+| --- | --- | --- | --- |
+| 🇬🇧 | English | en | `timeago.LangEn` |
+| 🇷🇺 | Russian | ru | `timeago.LangRu` |
+| 🇺🇦 | Ukrainian | uk | `timeago.LangUk` |
+| 🇳🇱 | Dutch | nl | `timeago.LangNl` |
+| 🇩🇪 | German | de | `timeago.LangDe` |
+| 🇨🇳 | Chinese Simplified | zh | `timeago.LangZh` |
