@@ -72,7 +72,7 @@ timeago.Configure(timeago.Config{
 ```go [New way]
 customTrans := []timeago.LangSet{
     {
-        Lang: "en",
+        Lang: timeago.LangEn,
         Ago:  "",
         Day: timeago.LangForms{
             "one":   "d",

@@ -20,8 +20,8 @@ Here is the full list of all the available configurations on the `textwire.Confi
 | [Language](/v3/configurations.html#language) | `en` | `string` | Set the language for your application in ISO 639 format |
 | [Location](/v3/configurations.html#location) | `UTC` | `string` | Set the timezone for parsing date strings |
 | [Translations](/v3/configurations.html#translation-overrides) | `[]LangSet{}` | `[]LangSet` | Customize the output format and translations |
-| [OnlineThreshold](/v3/configurations.html#thresholds) | `60` | `uint` | The threshold in seconds to determine when timeago should show `Online` instead of `X seconds ago` |
-| [JustNowThreshold](/v3/configurations.html#thresholds) | `60` | `uint` | The threshold in seconds to determine when timeago should show `Just now` instead of `X seconds ago` |
+| [OnlineThreshold](/v3/configurations.html#thresholds) | `60` | `int` | The threshold in seconds to determine when timeago should show `Online` instead of `X seconds ago` |
+| [JustNowThreshold](/v3/configurations.html#thresholds) | `60` | `int` | The threshold in seconds to determine when timeago should show `Just now` instead of `X seconds ago` |
 
 ## Language
 You can optionally set the language for your application. The default is `en` (English), but you can change it to any language supported by Timeago.
@@ -29,11 +29,11 @@ You can optionally set the language for your application. The default is `en` (E
 The language code follows the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard. Here is an example of how to set the language to Russian:
 
 ```go
-import "github.com/SerhiiCho/timeago/v3"
+import ago "github.com/SerhiiCho/timeago/v3"
 
 func init() {
-    timeago.Configure(timeago.Config{
-        Language: "ru",
+    ago.Configure(ago.Config{
+        Language: ago.LangRu,
     })
 }
 ```
@@ -77,7 +77,7 @@ import ago "github.com/SerhiiCho/timeago/v3"
 func main() {
     customTrans := []ago.LangSet{
         {
-            Lang: "en",
+            Lang: ago.LangEn,
             Format: "{num}{timeUnit}",
             Day: ago.LangForms{
                 "one":   "d",
@@ -103,7 +103,7 @@ To give you an idea of how to structure the `LangSet` object for fully customizi
 type LangForms map[string]string
 
 type LangSet struct {
-	Lang    string    `json:"lang"`
+	Lang    Lang      `json:"lang"`
 	Format  string    `json:"format"`
 	Ago     string    `json:"ago"`
 	Online  string    `json:"online"`
@@ -117,6 +117,8 @@ type LangSet struct {
 	Year    LangForms `json:"year"`
 }
 ```
+
+`Lang` type is just a string like "en", "zh", "ru", etc.
 
 :::tip Target Language
 The `Lang` field in the `LangSet` struct specifies the language you want to override. To override translations for multiple languages, simply add multiple `LangSet` structs to the `Translations` field in the `Config`.
@@ -132,17 +134,17 @@ For example, in German (supported by Timeago), the format is `{ago} {num} {timeU
 To modify the output, simply update the `Format` field in the `LangSet` struct to your desired structure:
 
 ```go
-import "github.com/SerhiiCho/timeago/v3"
+import ago "github.com/SerhiiCho/timeago/v3"
 
 func main() {
-    customTrans := []timeago.LangSet{
+    customTrans := []ago.LangSet{
         {
-            Lang: "en",
+            Lang: ago.LangEn,
             Format: "It's been {num} {timeUnit}",
         },
     }
 
-    timeago.Configure(timeago.Config{
+    ago.Configure(ago.Config{
         Translations: customTrans,
     })
 }
