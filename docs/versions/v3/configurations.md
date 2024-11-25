@@ -20,7 +20,8 @@ Here is the full list of all the available configurations on the `textwire.Confi
 | [Language](/v3/configurations.html#language) | `en` | `string` | Set the language for your application in ISO 639 format |
 | [Location](/v3/configurations.html#location) | `UTC` | `string` | Set the timezone for parsing date strings |
 | [Translations](/v3/configurations.html#translation-overrides) | `[]LangSet{}` | `[]LangSet` | Customize the output format and translations |
-| [OnlineThreshold](/v3/configurations.html#online-threshold) | `60` | `uint` | The threshold in seconds to determine when timeago should show `Online` instead of `X seconds ago` |
+| [OnlineThreshold](/v3/configurations.html#thresholds) | `60` | `uint` | The threshold in seconds to determine when timeago should show `Online` instead of `X seconds ago` |
+| [JustNowThreshold](/v3/configurations.html#thresholds) | `60` | `uint` | The threshold in seconds to determine when timeago should show `Just now` instead of `X seconds ago` |
 
 ## Language
 You can optionally set the language for your application. The default is `en` (English), but you can change it to any language supported by Timeago.
@@ -149,12 +150,13 @@ func main() {
 
 After this change, you output will be `It's been 10 minutes` instead of `10 minutes ago`.
 
-## Online Threshold
-The threshold in seconds to determine when the Timeago should show `Online` instead of `X seconds ago`. If the time difference is less than the threshold, it will show `Online`.
+## Thresholds
+The threshold in seconds to determine when the Timeago should show `Online` or `Just now` instead of `X seconds ago`. If the time difference is less than the threshold, it will show `Online` or `Just now` instead of `X seconds ago` depending on the provided [option](/v3/options.html).
 
-**Minimum value**: `1` *(always show `Online`)*\
-**Default value**: `60` *(show `Online` if the time difference is less than 60 seconds)*
+**Minimum value**: `1` *(always show `Online` / `Just now`)*\
+**Default value**: `60` *(show `Online` / `Just now` if the time difference is less than 60 seconds)*
 
+### `OnlineThreshold` example
 ```go
 import ago "github.com/SerhiiCho/timeago/v3"
 
@@ -172,6 +174,28 @@ func main() {
 	out35, _ := ago.Parse(_35secondsAgo, ago.Online)
 
 	fmt.Println(out25) // Output: "Online"
+	fmt.Println(out35) // Output: "35 seconds ago"
+}
+```
+
+### `JustNowThreshold` example
+```go
+import ago "github.com/SerhiiCho/timeago/v3"
+
+func init() {
+    ago.Configure(ago.Config{
+        JustNowThreshold: 30,
+    })
+}
+
+func main() {
+	_25secondsAgo := time.Now().Add(-25 * time.Second)
+	_35secondsAgo := time.Now().Add(-35 * time.Second)
+
+	out25, _ := ago.Parse(_25secondsAgo, ago.JustNow)
+	out35, _ := ago.Parse(_35secondsAgo, ago.JustNow)
+
+	fmt.Println(out25) // Output: "Just now"
 	fmt.Println(out35) // Output: "35 seconds ago"
 }
 ```
