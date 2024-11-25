@@ -21,7 +21,7 @@ import (
 func main() {
     tenSecondsAgo := time.Now().Add(-time.Second * 10)
 
-    out, err := ago.Parse(currTime, ago.Online)
+    out, err := ago.Parse(currTime, ago.OptOnline)
 
     if err != nil {
         // handle the error
@@ -32,7 +32,7 @@ func main() {
 ```
 
 :::tip Two Ways to Use Options
-You can pass options either as strings (e.g., `"online"`, `"justNow"`) or by using constants from the `timeago` package (e.g., `timeago.Online`, `timeago.JustNow`). While both approaches work the same, using constants is recommended because it improves readability, reduces errors, and provides autocomplete support in your editor.
+You can pass options either as strings (e.g., `"online"`, `"justNow"`) or by using constants from the `timeago` package (e.g., `timeago.OptOnline`, `timeago.OptJustNow`). While both approaches work the same, using constants is recommended because it improves readability, reduces errors, and provides autocomplete support in your editor.
 :::
 
 ## Example With Multiple Options
@@ -49,7 +49,7 @@ import (
 func main() {
     tenSecondsAgo := time.Now().Add(-time.Second * 10)
 
-    out, err := ago.Parse(currTime, ago.JustNow, ago.NoSuffix)
+    out, err := ago.Parse(currTime, ago.OptJustNow, ago.OptNoSuffix)
 
     if err != nil {
         // handle the error
@@ -66,9 +66,9 @@ The full list of available options:
 
 | Constant | String | Description |
 | --- | --- | --- |
-| `Online` | `"online"` | Displays **Online** if date interval withing 60 seconds. For example instead of `13 seconds ago` prints `Online` |
-| `JustNow` | `"justNow"` | Displays **Just now** if date interval withing 60 seconds. For example instead of `32 seconds ago` prints `Just now`. |
-| `NoSuffix` | `"noSuffix"` | Removes suffix from datetime result and get for example `5 minutes` instead of `5 minutes ago`. |
-| `Upcoming` | `"upcoming"` | Removes the suffix `ago` when the date is in the future. **This option is enabled by default, there is no need to pass it**. It's available to keep backward compatibility with the previous versions. |
+| `OptOnline` | `"online"` | Displays **Online** if date interval withing 60 seconds. For example instead of `13 seconds ago` prints `Online` |
+| `OptJustNow` | `"justNow"` | Displays **Just now** if date interval withing 60 seconds. For example instead of `32 seconds ago` prints `Just now`. |
+| `OptNoSuffix` | `"noSuffix"` | Removes suffix from datetime result and get for example `5 minutes` instead of `5 minutes ago`. |
+| `OptUpcoming` | `"upcoming"` | Removes the suffix `ago` when the date is in the future. **This option is enabled by default, there is no need to pass it**. It's available to keep backward compatibility with the previous versions. |
 
 This list will be updated with new useful options in the future if they are actually something that can be useful for the majority of users. If you want to suggest a new option, please create an issue on the [GitHub repository](https://github.com/SerhiiCho/timeago/issues)
