@@ -103,7 +103,7 @@ To give you an idea of how to structure the `LangSet` object for fully customizi
 type LangForms map[string]string
 
 type LangSet struct {
-	Lang    Lang      `json:"lang"`
+	Lang    string    `json:"lang"`
 	Format  string    `json:"format"`
 	Ago     string    `json:"ago"`
 	Online  string    `json:"online"`
