@@ -12,6 +12,15 @@ The `Configure` function allows incremental updates to the configuration. It mer
 
 If you want to completely override the existing configuration, use the `Reconfigure` function instead. It resets all settings to their default values before applying the new configuration.
 
+## Available Configurations
+Here is the full list of all the available configurations on the `textwire.Config` struct:
+
+| Name | Default value | Description |
+| --- | --- | --- |
+| `Language` | `"en"` | Set the language for your application in ISO 639 format |
+| `Location` | `"UTC"` | Set the timezone for parsing date strings |
+| `Translations` | `[]LangSet{}` | Customize the output format and translations |
+
 ## Language
 You can optionally set the language for your application. The default is `en` (English), but you can change it to any language supported by Timeago.
 
@@ -32,19 +41,19 @@ You can find the full list of supported languages in the [Supported Languages](/
 :::
 
 ## Location
-Location specifies the timezone needed for parsing a date string like `2019-01-01 00:00:00` into a Go's [`time.Time`](https://pkg.go.dev/time) object. If `Location` is not set, it defaults to the server's timezone. **You don't need to set this** if your date string is already in the server's timezone.
+Location specifies the timezone needed for parsing a date string like `2019-01-01 00:00:00` into a Go's [`time.Time`](https://pkg.go.dev/time) object. If `Location` is not set, it interprets the given time as [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (Coordinated Universal Time). **You don't need to set this** if your date string is already in UTC.
 
 ```go
 import "github.com/SerhiiCho/timeago/v3"
 
 func init() {
     timeago.Configure(timeago.Config{
-        Location: "America/New_York",
+        Location: "Asia/Shanghai",
     })
 }
 ```
 
-Example locations: `America/New_York`, `Asia/Tokyo`, `Australia/Sydney`.
+Example locations: `America/New_York`, `Asia/Tokyo`, `Asia/Shanghai`, `Australia/Sydney`, `Europe/Moscow`, `Europe/Kiev` etc. Look for your location in the [IANA Time Zone Database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ## Translation Overrides
 In some cases, you may want to customize certain words or phrases used in Timeago. For example, you might want to replace the word `days` with `d` to get `4d ago`, or adjust phrases like `ago`, `Just now`, and `Online` to better fit your application's needs.
