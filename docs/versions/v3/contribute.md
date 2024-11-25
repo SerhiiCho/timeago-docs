@@ -7,6 +7,12 @@ description: Manual for contributing to the Timeago project by adding a new lang
 # Contribute Translation
 You can contribute a language support in 3 simple steps. All you need to do is to copy/paste several files and change them to match the language that you want to add.
 
+Don't be afraid that there are so many steps, it's just because I've described each step in detail. In fact, it's very easy to add a new language support because last steps are just adding information to the `CHANGELOG.md` and `README.md` files.
+
+:::tip Good Contribution Reference
+For better reference, I've added Chinese language support in [this commit](https://github.com/SerhiiCho/timeago/commit/8fa25609c627d367e6e210e38e3bee66109c0739). You can use it as a reference to see what steps I did.
+:::
+
 ## Step 1. Add Language Set File
 Language set files live in [langs](https://github.com/SerhiiCho/timeago/tree/main/langs) directory. Each translation file is a JSON object with the name matching the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard of the language that you want to add.
 
@@ -147,3 +153,35 @@ English, Dutch and German languages have the same rules for plural forms, so we 
 
 ## Step 3. Add Tests
 Tests for languages live in `tests` directory. Each language has it's own file. The easies way to add tests for your language is to copy paste one of the tests and change the test cases to match your language.
+
+## Step 4. Add a New Constant
+To the top of the `config.go` file, add a new constant with the language code that you want to add. Here is an example of adding Chinese language constant:
+
+```go
+package timeago
+
+const (
+	LangEn string = "en"
+	LangRu string = "ru"
+	LangUk string = "uk"
+	LangNl string = "nl"
+	LangDe string = "de"
+	LangZh string = "zh" // [!code ++]
+)
+```
+
+## Step 5. Add a Country Flag
+To the `README.md` file add a country flag for the language that you want to add just. Your new flag should be the last one there. Here is an example of adding a Chinese flag:
+
+```md
+... languages, such as 🇬🇧 🇷🇺 🇺🇦 🇳🇱 🇩🇪 🇨🇳. For more ...
+```
+
+## Step 6. Update the Change Log
+The last step is to update the [CHANGELOG.md](https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md) file to let the users know that you've added a new language support. Here is an example of how I've added Chinese language to the change log:
+
+```md
+- Added [OnlineThreshold](https://time-ago.github.io/v3/configurations.html#thresholds) parameter to the configurations to set the threshold for the "Online" status
+- Added [JustNowThreshold](https://time-ago.github.io/v3/configurations.html#thresholds) parameter to the configurations to set the threshold for the "Just now" status
+- Added support for Chinese Simplified language 🇨🇳 // [!code ++]
+```
