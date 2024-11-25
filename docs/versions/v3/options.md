@@ -62,13 +62,13 @@ func main() {
 But if we change the `tenSecondsAgo` to `time.Now().Add(-time.Minute * 2)` the output will be `2 minutes` because the `justNow` option is applicable only for the date interval within 60 seconds.
 
 ## Available Options
-The full list of available options:
+The full list of available options with constant names and string value if you prefer to use them:
 
-| Constant | String | Description |
+| Const & str | Description | When to use? |
 | --- | --- | --- |
-| `OptOnline` | `"online"` | Displays **Online** if date interval withing 60 seconds. For example instead of `13 seconds ago` prints `Online` |
-| `OptJustNow` | `"justNow"` | Displays **Just now** if date interval withing 60 seconds. For example instead of `32 seconds ago` prints `Just now`. |
-| `OptNoSuffix` | `"noSuffix"` | Removes suffix from datetime result and get for example `5 minutes` instead of `5 minutes ago`. |
-| `OptUpcoming` | `"upcoming"` | Removes the suffix `ago` when the date is in the future. **This option is enabled by default, there is no need to pass it**. It's available to keep backward compatibility with the previous versions. |
+| `OptOnline`<br>`"online"` | Displays **Online** if date interval withing 60 seconds. For example instead of `13 seconds ago` prints `Online` | It could be used when you need to display the online status of users, to tell the show that the user is `Online` when the date interval is within the certain threshold |
+| `OptJustNow`<br>`"justNow"` | Displays **Just now** if date interval withing 60 seconds. For example instead of `32 seconds ago` prints `Just now` | It could be used when you need to display the `Just now` message when the message was sent within the certain threshold, or when something was done, published, etc. |
+| `OptNoSuffix`<br>`"noSuffix"` | Removes suffix from datetime result and get for example `5 minutes` instead of `5 minutes ago` | It could be used in scenarios where you want to display a time duration without indicating whether it is in the past or future. Or, When you need a shorter, cleaner output for compact UI elements like widgets or dashboards |
+| `OptUpcoming`<br>`"upcoming"` | Removes the suffix `ago` when the date is in the future. **This option is enabled by default, there is no need to pass it**. It's available to keep backward compatibility with the previous versions | No usage. Because it's enabled by default |
 
 This list will be updated with new useful options in the future if they are actually something that can be useful for the majority of users. If you want to suggest a new option, please create an issue on the [GitHub repository](https://github.com/SerhiiCho/timeago/issues)
