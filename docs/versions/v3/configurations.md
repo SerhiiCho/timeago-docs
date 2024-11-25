@@ -15,11 +15,12 @@ If you want to completely override the existing configuration, use the `Reconfig
 ## Available Configurations
 Here is the full list of all the available configurations on the `textwire.Config` struct:
 
-| Name | Default value | Description |
-| --- | --- | --- |
-| `Language` | `"en"` | Set the language for your application in ISO 639 format |
-| `Location` | `"UTC"` | Set the timezone for parsing date strings |
-| `Translations` | `[]LangSet{}` | Customize the output format and translations |
+| Name | Default value | type | Description |
+| --- | --- | --- | --- |
+| [Language](/v3/configurations.html#language) | `en` | `string` | Set the language for your application in ISO 639 format |
+| [Location](/v3/configurations.html#location) | `UTC` | `string` | Set the timezone for parsing date strings |
+| [Translations](/v3/configurations.html#translation-overrides) | `[]LangSet{}` | `[]LangSet` | Customize the output format and translations |
+| [OnlineThreshold](/v3/configurations.html#online-threshold) | `60` | `uint` | The threshold in seconds to determine when timeago should show `Online` instead of `X seconds ago` |
 
 ## Language
 You can optionally set the language for your application. The default is `en` (English), but you can change it to any language supported by Timeago.
@@ -147,3 +148,30 @@ func main() {
 ```
 
 After this change, you output will be `It's been 10 minutes` instead of `10 minutes ago`.
+
+## Online Threshold
+The threshold in seconds to determine when the Timeago should show `Online` instead of `X seconds ago`. If the time difference is less than the threshold, it will show `Online`.
+
+**Minimum value**: `1` *(always show `Online`)*\
+**Default value**: `60` *(show `Online` if the time difference is less than 60 seconds)*
+
+```go
+import ago "github.com/SerhiiCho/timeago/v3"
+
+func init() {
+    ago.Configure(ago.Config{
+        OnlineThreshold: 30,
+    })
+}
+
+func main() {
+	_25secondsAgo := time.Now().Add(-25 * time.Second)
+	_35secondsAgo := time.Now().Add(-35 * time.Second)
+
+	out25, _ := ago.Parse(_25secondsAgo, ago.Online)
+	out35, _ := ago.Parse(_35secondsAgo, ago.Online)
+
+	fmt.Println(out25) // Output: "Online"
+	fmt.Println(out35) // Output: "35 seconds ago"
+}
+```
