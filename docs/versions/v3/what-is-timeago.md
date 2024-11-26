@@ -15,7 +15,7 @@ The library has several nice features, such as:
 - 📅 Flexible date parsing, supporting both [past and future dates](/v3/usage.html#date-in-the-past)
 - ⚙️ Configurable library with ability to pass [options](/v3/options) to suit various use cases, [override translations](/v3/configurations.html#translation-overrides) or [modify the output format](/v3/configurations.html#modify-the-output-format)
 - ✅ Comprehensive test coverage for reliability
-- 🌐 Timeago support multiple languages such as English, Russian, Ukrainian, Dutch, German and you can contribute more
+- 🌐 Timeago support multiple languages such as English, Russian, Ukrainian, Dutch, German, Chinese, Belarusian, Spanish and more. You can also easily contribute more following our [step-by-step guide](/v3/contribute.html)
 - 📦 Compact codebase for minimal footprint
 - 🕰️ Unix timestamp parsing
 - ⏱️ Support for date-time strings in the `YYYY-MM-DD HH:MM:SS` format
@@ -27,13 +27,13 @@ The library has several nice features, such as:
 ## Supported Languages
 Timeago supports multiple languages, and you’re welcome to [contribute](/v3/contribute) additional ones. Check out the languages currently available:
 
-| Flag | Language | ISO 639-1 Code | Const |
-| --- | --- | --- | --- |
-| 🇬🇧 | English | en | `timeago.LangEn` |
-| 🇷🇺 | Russian | ru | `timeago.LangRu` |
-| 🇺🇦 | Ukrainian | uk | `timeago.LangUk` |
-| 🇳🇱 | Dutch | nl | `timeago.LangNl` |
-| 🇩🇪 | German | de | `timeago.LangDe` |
-| 🇨🇳 | Simplified Chinese | zh | `timeago.LangZh` |
-| 🇧🇾 | Belarusian | be | `timeago.LangBe` |
-| 🇪🇸 | Spanish | es | `timeago.LangEs` |
+| Flag | Language           | ISO 639-1 Code | Const            |
+| ---- | ------------------ | -------------- | ---------------- |
+| 🇬🇧    | English            | en             | `timeago.LangEn` |
+| 🇷🇺    | Russian            | ru             | `timeago.LangRu` |
+| 🇺🇦    | Ukrainian          | uk             | `timeago.LangUk` |
+| 🇳🇱    | Dutch              | nl             | `timeago.LangNl` |
+| 🇩🇪    | German             | de             | `timeago.LangDe` |
+| 🇨🇳    | Simplified Chinese | zh             | `timeago.LangZh` |
+| 🇧🇾    | Belarusian         | be             | `timeago.LangBe` |
+| 🇪🇸    | Spanish            | es             | `timeago.LangEs` |
