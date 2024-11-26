@@ -187,3 +187,8 @@ The last step is to update the [CHANGELOG.md](https://github.com/SerhiiCho/timea
 - Added [JustNowThreshold](https://time-ago.github.io/v3/configurations.html#thresholds) parameter to the configurations to set the threshold for the "Just now" status
 - Added support for Chinese Simplified language 🇨🇳 // [!code ++]
 ```
+
+## Conclusion
+That's it! In total you should have `6` files changed/added. After you've done all the steps, you can create a pull request and I'll review it as soon as possible. If everything is fine, I'll merge your pull request and your language will be available in the next release of the Timeago.
+
+You can pull your changes to the `main` branch and I will do the rest of the work to update the documentation website and release a new version of the Timeago.
