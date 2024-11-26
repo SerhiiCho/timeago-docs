@@ -21,7 +21,7 @@ features:
     details: Timeago has a flexible date parsing and can parse several different date formats, such as UNIX timestamp, date string like "YYYY-MM-DD HH:MM:SS" and Go's "time.Time" struct
     icon: 🧩
   - title: Support for Multiple Languages
-    details: You can output date in several different languages such as English, Russian, Chinese, Ukrainian, Dutch, German and you can easily contribute your own language. 🇬🇧🇷🇺🇺🇦🇳🇱🇩🇪🇨🇳
+    details: 🇬🇧 🇷🇺 🇺🇦 🇳🇱 🇩🇪 🇨🇳 🇧🇾<br>You can output date in several different languages such as English, Russian, Chinese, Ukrainian, Dutch, German and you can easily contribute your own language
     icon: 🌍
   - title: Configurable Options to Suit Diverse Use Cases
     details: You can configure Timeago to suit your needs to the point where you can even modify the output format of the date, override translation sets and more

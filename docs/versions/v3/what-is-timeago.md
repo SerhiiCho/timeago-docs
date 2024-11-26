@@ -34,4 +34,5 @@ Timeago supports multiple languages, and you’re welcome to [contribute](/v3/co
 | 🇺🇦 | Ukrainian | uk | `timeago.LangUk` |
 | 🇳🇱 | Dutch | nl | `timeago.LangNl` |
 | 🇩🇪 | German | de | `timeago.LangDe` |
-| 🇨🇳 | Chinese Simplified | zh | `timeago.LangZh` |
+| 🇨🇳 | Simplified Chinese | zh | `timeago.LangZh` |
+| 🇧🇾 | Belarusian | be | `timeago.LangBe` |
