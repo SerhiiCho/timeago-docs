@@ -16,7 +16,7 @@ For better reference, I've added Chinese language support in [this commit](https
 :::
 
 ## Step 1. Add Language Set File
-Language set files live in [langs](https://github.com/SerhiiCho/timeago/tree/main/langs) directory. Each translation file is a JSON object with the name matching the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard of the language that you want to add.
+Language set files live in [langs](https://github.com/SerhiiCho/timeago/tree/main/langs) directory. Each translation file is a JSON object with the name matching the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard of the language that you want to add.
 
 These files follow the [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules for each language. Keep in mind that the only required field that we need to define for time unit is `other`, since this field is used as a fallback if no other rule matches.
 
@@ -87,7 +87,7 @@ In this file we don't actually need to define the `few` field, since the the fal
 ### Fields
 Let me give you a little bit more explanation about the fields in the file:
 
-- `"lang": "ru"` - The language code based on the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard.
+- `"lang": "ru"` - The language code based on the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard.
 - `"format": "{num} {timeUnit} {ago}"` - This is the format of the output string.
   - `{num}` is the number of time units like `1`, `2`, `3`, etc.
   - `{timeUnit}` is the time unit itself like `second`, `minute`, `hour`, etc.
@@ -133,7 +133,7 @@ var grammarRules = func(num int) map[string]*Rule {
 }
 ```
 
-As a convenience, if the language that you want to add matches the rules of already existing language, you can just add your language `ISO 639` code to the rule key like this:
+As a convenience, if the language that you want to add matches the rules of already existing language, you can just add your language [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) code to the rule key like this:
 
 ```go
 var grammarRules = func(num int) map[string]*Rule {

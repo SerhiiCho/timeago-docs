@@ -4,10 +4,10 @@ title: Upgrade - v3
 description: Detailed guide on how to upgrade Timeago from v2 to v3
 ---
 
-# Upgrade Guide from v2 to v3
-Timeago `v3` was a major release with the full rewrite of the library. It gave us a better and easier way to add support for a new language and improved error handling. This guide will help you to upgrade from `v2` to `v3`.
+# Upgrade Guide: v2 to v3
+Timeago `v3` is a major release featuring a complete rewrite of the library. This rewrite introduces a more streamlined process for adding new language support and significantly improves error handling. This guide will help you transition from `v2` to `v3` smoothly.
 
-I've decided to not include new features in this release to make the upgrade process as smooth as possible. I'll add them in the next feature release. The version `3.0.0` focuses on the Timeago API changes.
+To simplify the upgrade process, no new features have been introduced in this release. Version [v3.0.0](https://github.com/SerhiiCho/timeago/pull/40) focuses entirely on changes to the Timeago API. New features are added in the [v3.1.0](https://github.com/SerhiiCho/timeago/pull/41) release, such as [support for 🇨🇳 Simplified Chinese language](https://github.com/SerhiiCho/timeago/issues/24), and extended configuration options.
 
 ## Breaking Changes
 - **Update package namespace**. Changed package namespace to `github.com/SerhiiCho/timeago/v3`

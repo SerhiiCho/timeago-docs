@@ -7,26 +7,30 @@ description: Learn how to configure the library with different options like lang
 # Configurations
 You can update the library configuration using the `Configure` or `Reconfigure` function, both of which accept a `Config` struct. These functions can be called in your init function, main function, or anywhere in your codebase, as long as they are called before the `Parse` function. If not, the library will fall back to the default configuration.
 
-## Two Configuration Functions
-The `Configure` function allows incremental updates to the configuration. It merges the new settings with the existing ones, preserving any previously configured values. This means you can update specific settings without affecting the rest.
+## Configuration Options
+You can apply your configurations in two ways, depending on your needs.
 
-If you want to completely override the existing configuration, use the `Reconfigure` function instead. It resets all settings to their default values before applying the new configuration.
+### `Configure`
+The `Configure` function lets you update specific settings without altering the rest of the configuration. It merges the new settings with the existing ones, ensuring that previously configured values are preserved. This is ideal for incremental updates when you only need to adjust certain options.
+
+### `Reconfigure`
+Use the `Reconfigure` function to completely replace the current configuration. This function resets all settings to their default values before applying the new configuration, ensuring a clean slate for your updates.
 
 ## Available Configurations
-Here is the full list of all the available configurations on the `textwire.Config` struct:
+Below is the full list of available configurations for the `textwire.Config` struct:
 
-| Name | Default value | type | Description |
-| --- | --- | --- | --- |
-| [Language](/v3/configurations.html#language) | `en` | `string` | Set the language for your application in ISO 639 format |
-| [Location](/v3/configurations.html#location) | `UTC` | `string` | Set the timezone for parsing date strings |
-| [Translations](/v3/configurations.html#translation-overrides) | `[]LangSet{}` | `[]LangSet` | Customize the output format and translations |
-| [OnlineThreshold](/v3/configurations.html#thresholds) | `60` | `int` | The threshold in seconds to determine when timeago should show `Online` instead of `X seconds ago` |
-| [JustNowThreshold](/v3/configurations.html#thresholds) | `60` | `int` | The threshold in seconds to determine when timeago should show `Just now` instead of `X seconds ago` |
+| Name | Default Value | Type | Description |
+|------|---------------|------|-------------|
+| [Language](/v3/configurations.html#language) | `en` | `string` | Specifies the language for your application using the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format. |
+| [Location](/v3/configurations.html#location) | `UTC` | `string` | Defines the timezone for parsing date strings. |
+| [Translations](/v3/configurations.html#translation-overrides) | `[]LangSet{}` | `[]LangSet` | Allows customization of the output format and translations. |
+| [OnlineThreshold](/v3/configurations.html#thresholds) | `60` | `int` | Sets the threshold (in seconds) for showing `Online` instead of `X seconds ago`. |
+| [JustNowThreshold](/v3/configurations.html#thresholds) | `60` | `int` | Sets the threshold (in seconds) for displaying `Just now` instead of `X seconds ago`. |
 
 ## Language
 You can optionally set the language for your application. The default is `en` (English), but you can change it to any language supported by Timeago.
 
-The language code follows the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard. Here is an example of how to set the language to Russian:
+The language code follows the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) standard. Here is an example of how to set the language to Russian:
 
 ```go
 import ago "github.com/SerhiiCho/timeago/v3"
