@@ -156,7 +156,7 @@ English, Dutch and German languages have the same rules for plural forms, so we 
 Tests for languages live in `tests` directory. Each language has it's own file. The easies way to add tests for your language is to copy paste one of the tests and change the test cases to match your language.
 
 ## Step 4. New Constant
-To the top of the `config.go` file, add a new constant with the language code that you want to add. Here is an example of adding Chinese language constant:
+To the top of the [config.go](https://github.com/SerhiiCho/timeago/blob/main/config.go) file, add a new constant with the language code that you want to add. Here is an example of adding Chinese language constant:
 
 ```go
 package timeago
