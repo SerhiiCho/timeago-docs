@@ -38,3 +38,4 @@ Timeago supports multiple languages, and you’re welcome to [contribute](/v3/co
 | 🇧🇾    | Belarusian         | be             | `timeago.LangBe` |
 | 🇪🇸    | Spanish            | es             | `timeago.LangEs` |
 | 🇯🇵    | Japanese           | ja             | `timeago.LangJa` |
+| 🇫🇷    | French             | fr             | `timeago.LangFr` |
