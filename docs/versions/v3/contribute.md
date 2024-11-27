@@ -8,10 +8,10 @@ You can contribute a language support in 3 simple steps. All you need to do is t
 
 Don't be afraid that there are so many steps, it's just because I've described each step in detail. In fact, it's very easy to add a new language support because last steps are just adding information to the `CHANGELOG.md` and `README.md` files.
 
-As for the [documentation website](https://time-ago.github.io/), I'll take care of updating it after your contribution.
+As for this documentation website, I'll take care of updating it after your contribution.
 
 :::tip Good Contribution Reference
-For better reference, I've added Chinese language support in [this commit](https://github.com/SerhiiCho/timeago/commit/8fa25609c627d367e6e210e38e3bee66109c0739). You can use it as a reference to see what steps I did.
+For better reference, I've added Japanese language support in [this commit](https://github.com/SerhiiCho/timeago/commit/bad0b8bd4149048a44b6a451457f8ab96dae0049). You can use it as a reference to see what steps I did.
 :::
 
 ## Step 1. Language Set File
