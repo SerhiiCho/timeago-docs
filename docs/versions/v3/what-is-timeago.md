@@ -27,15 +27,15 @@ The library has several nice features, such as:
 ## Supported Languages
 Timeago supports multiple languages, and you’re welcome to [contribute](/v3/contribute) additional ones. Check out the languages currently available:
 
-| Flag | Language           | ISO 639-1 Code | Const            |
-| ---- | ------------------ | -------------- | ---------------- |
-| 🇬🇧    | English            | en             | `timeago.LangEn` |
-| 🇷🇺    | Russian            | ru             | `timeago.LangRu` |
-| 🇺🇦    | Ukrainian          | uk             | `timeago.LangUk` |
-| 🇳🇱    | Dutch              | nl             | `timeago.LangNl` |
-| 🇩🇪    | German             | de             | `timeago.LangDe` |
-| 🇨🇳    | Simplified Chinese | zh             | `timeago.LangZh` |
-| 🇧🇾    | Belarusian         | be             | `timeago.LangBe` |
-| 🇪🇸    | Spanish            | es             | `timeago.LangEs` |
-| 🇯🇵    | Japanese           | ja             | `timeago.LangJa` |
-| 🇫🇷    | French             | fr             | `timeago.LangFr` |
+| #   | Flag | Language   | ISO 639-1 Code | Const            |
+| --- | ---- | ---------- | -------------- | ---------------- |
+| 1   | 🇬🇧    | English    | en             | `timeago.LangEn` |
+| 2   | 🇷🇺    | Russian    | ru             | `timeago.LangRu` |
+| 3   | 🇺🇦    | Ukrainian  | uk             | `timeago.LangUk` |
+| 4   | 🇳🇱    | Dutch      | nl             | `timeago.LangNl` |
+| 5   | 🇩🇪    | German     | de             | `timeago.LangDe` |
+| 6   | 🇨🇳    | Chinese    | zh             | `timeago.LangZh` |
+| 7   | 🇧🇾    | Belarusian | be             | `timeago.LangBe` |
+| 8   | 🇪🇸    | Spanish    | es             | `timeago.LangEs` |
+| 9   | 🇯🇵    | Japanese   | ja             | `timeago.LangJa` |
+| 10  | 🇫🇷    | French     | fr             | `timeago.LangFr` |
