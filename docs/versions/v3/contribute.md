@@ -1,5 +1,4 @@
 ---
-outline: deep
 title: Contribute - v3
 description: Manual for contributing to the Timeago project by adding a new language support
 ---
