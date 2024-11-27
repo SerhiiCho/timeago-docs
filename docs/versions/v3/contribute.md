@@ -175,7 +175,7 @@ const (
 To the `README.md` file add a country flag for the language that you want to add just. Your new flag should be the last one there. Here is an example of adding a Chinese flag:
 
 ```md
-... languages, such as 🇬🇧 🇷🇺 🇺🇦 🇳🇱 🇩🇪 🇨🇳. For more ...
+... languages, such as 🇬🇧 🇷🇺 🇺🇦 🇳🇱 🇩🇪 🇨🇳 🇯🇵. For more ...
 ```
 
 ## Step 6. Changelog
