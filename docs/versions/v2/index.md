@@ -5,7 +5,7 @@ title: Guide - v2
 ---
 
 :::danger Outdated version
-This is the `v2` version of Timeago library that is outdated. You can [switch to the latest version](/) to get all the new features and improvements
+You are viewing the outdated version of Timeago library. [Switch to the latest version](/) to get all the new features and improvements
 :::
 
 # Guide
