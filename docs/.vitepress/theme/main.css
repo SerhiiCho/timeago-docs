@@ -1,0 +1,36 @@
+:root {
+    --vp-c-brand-1: #388492 !important;
+    --vp-c-brand-2: #1c5d68 !important;
+    --vp-button-brand-bg: #398593 !important;
+    --vp-button-brand-hover-bg: #2d747f !important;
+    --vp-home-hero-name-color: transparent !important;
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #0a5b69, #71c1d0) !important;
+
+    --popup-bg: rgb(210 212 246);
+    --popup-btn1: #a9aced;
+    --popup-btn2: #bbbde2;
+}
+
+.dark {
+    --vp-c-brand-1: #59aebd !important;
+    --vp-c-brand-2: #7bcedc !important;
+    --vp-button-brand-bg: #74cddc !important;
+    --vp-button-brand-hover-bg: #5fb4c3 !important;
+    --vp-button-brand-text: black !important;
+    --vp-button-brand-hover-text: black !important;
+    --vp-home-hero-name-color: transparent !important;
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #0d6f80, #ccf5fc) !important;
+
+    --popup-bg: rgb(48 43 64);
+    --popup-btn1: #1e1635;
+    --popup-btn2: #221f2d;
+}
+
+/* Grid layout for the community page */
+.VPTeamMembers > .container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+}
+
+.VPTeamMembers > .container .profile {
+    padding: 25px !important;
+}
