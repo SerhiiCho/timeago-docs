@@ -100,6 +100,12 @@ const members = [
         title: 'Early Stargazer',
         links: [{ icon: 'github', link: 'https://github.com/J-iSkeLo' }],
     },
+    {
+        avatar: 'https://avatars.githubusercontent.com/u/40788381',
+        name: 'Ahmad Mufied Nugroho',
+        title: 'Early Stargazer',
+        links: [{ icon: 'github', link: 'https://github.com/Ahmad-mufied' }],
+    },
 ]
 </script>
 

@@ -49,7 +49,7 @@ export default defineVersionedConfig(
                     },
                 },
                 { text: 'Guide', link: '/v3/' },
-                { text: 'Community', link: '/v3/community' },
+                { text: 'Community', link: '/community' },
                 {
                     text: 'Changelog',
                     link: 'https://github.com/SerhiiCho/timeago/blob/main/CHANGELOG.md',
